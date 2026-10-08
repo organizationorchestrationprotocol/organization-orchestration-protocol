@@ -1,0 +1,25 @@
+{
+  "protocol_id": "organization-orchestration-protocol",
+  "releases": [
+    {
+      "version": "1.0.0",
+      "path": "releases/v1.0.0",
+      "previous_version": null,
+      "migration": "migrations/initial-to-1.0.0.yaml",
+      "changelog": "releases/v1.0.0/CHANGELOG.md",
+      "source": {
+        "path": "src/prompt.md",
+        "git_revision": null,
+        "sha256": "95371b69bbbc460837efb722c22bc7dad9e2ce78d61a5f37c991d4e0943aff6f",
+        "revision": "sha256:95371b69bbbc460837efb722c22bc7dad9e2ce78d61a5f37c991d4e0943aff6f"
+      },
+      "stage": "final",
+      "publication": "publication/1.0.0.yaml",
+      "publication_transport": "signed_tag",
+      "release_status": "final"
+    }
+  ],
+  "latest_version": "1.0.0",
+  "current": "current/manifest.yaml",
+  "latest_published_version": "1.0.0"
+}

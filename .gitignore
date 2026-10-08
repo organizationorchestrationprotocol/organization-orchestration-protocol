@@ -1,0 +1,4 @@
+.vscode/
+.priv/
+node_modules/
+*.tmp
