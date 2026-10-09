@@ -352,7 +352,9 @@ These examples are non-normative illustrations of the canonical source, not addi
 | Persistent instructions plus local external validators | Use the validators to prevent or invalidate affected actions and retain semantic judgment for scope/authority | External deterministic coverage plus semantic interpretation |
 | Semantic instructions only | Apply the current contract, disclose unavailable deterministic interception and recover from canonical references | Semantic fallback; no fully enforced claim |
 
-For example, an unchanged attestation can reuse the same-day freshness result with zero new remote checks. A changed digest invalidates affected controls even when the version still reads 1.0.0. A tracked private file blocks sensitive publication even if an ignore rule exists. A successful operation response still needs result validation before a scoped completion claim.
+For example, an unchanged attestation can reuse the same-day freshness result with zero new remote checks. A changed OOP commit requires assessment of the affected requirements and invalidates dependent controls when their governing source changes, even when a version label is unchanged. A tracked private file blocks sensitive publication even if an ignore rule exists. A successful operation response still needs result validation before a scoped completion claim.
+
+Tool A observes canonical remote commit R and a local checkout at R with unchanged committed protocol files: synchronization is verified. Tool B may share that checkout but still have verified adopted commit Q; B must evaluate the change and pass its own applicable adoption checks before advancing to R. With local protocol edits, the checkout is a working candidate rather than a synchronized baseline. When the remote is unavailable, its current commit remains unknown; a cached R is only the last observation. R and Q are illustrative placeholders, not usable commit IDs: actual checkpoints record the full Git object IDs and repository/ref scope.
 
 Maintenance navigation: [versioning contract](maintenance/versioning.md).
 
@@ -394,7 +396,7 @@ Conversation context is an execution cache, not a source of normative authority.
 
 ## Maintainer routing and context examples
 
-A normative routing change starts in src/prompt.md. Review its actor, trigger, scope, exceptions and evidence threshold; regenerate the manifest index and affected split/profiles; update traceability, rolling regression, semantic scenarios, README and examples. An index contradicting canonical source is stale derived state and is invalidated; canonical source wins. The full source is reviewed for normative maintenance, while consumers use selective rehydration. No installed-runtime or provider result is inferred from synthetic tests.
+A normative routing change starts in PROMPT.md. Review its actor, trigger, scope, exceptions and evidence threshold; regenerate the commit-bound Semantic Routing Index and affected split/profiles; update traceability, rolling regression, semantic scenarios, README and examples. An index contradicting canonical source is stale derived state and is invalidated; canonical source wins. The full source is reviewed for normative maintenance, while consumers use selective rehydration. No installed-runtime or provider result is inferred from synthetic tests.
 
 Maintenance procedure: [versioning.md](maintenance/versioning.md).
 

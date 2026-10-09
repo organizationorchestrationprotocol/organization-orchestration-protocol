@@ -158,7 +158,7 @@ OOP is a research and development protocol/specification, provided **AS IS** und
 
 **What happens after adoption:** A sufficiently capable AI identifies the current project/workspace, verifies current OOP, reconstructs relevant durable state and determines which rules apply. It materializes and validates its applicable controls, checks whether it can provide full OOP governance, performs and verifies authorized work, and leaves the project resumable by another compatible authorized AI. This is explanatory orientation, not a second bootstrap specification.
 
-Use exact context-integrity evidence and the manifest Semantic Routing Index; reroute at interaction, pre-effect, state changes, recovery and completion. Establish suitability before claiming full governance. Establish your own verified adoption and applicable context before governed work.
+Use exact context-integrity evidence and the Semantic Routing Index; reroute at interaction, pre-effect, state changes, recovery and completion. Establish suitability before claiming full governance. Establish your own verified adoption and applicable context before governed work.
 
 ### Context and applicable controls
 
@@ -166,7 +166,7 @@ A control is verified only through its real installed invocation path, with obse
 
 OOP is a self-materializing governance protocol: it defines what must be true, while the active environment discovers capabilities, derives and installs its strongest applicable controls, validates them and refreshes them when OOP or the environment changes. Native deterministic, external deterministic, persistent semantic and transient semantic enforcement describe actual guarantees; residual gaps remain explicit. Actual access and authority still determine executable actions.
 
-The compact **Semantic Routing Index** extends the existing consumer manifest module entries. Requests, planned and actual actions, state, risk, authority and recovery contribute a conservative union of facets; module selection and dependency closure then follow deterministically. A local edit that becomes a push loads repository rules before the push. If it becomes a deployment, execution and verification rules join before deployment. Completion repeats routing against what actually happened.
+The compact **Semantic Routing Index** is derived metadata bound to the adopted OOP repository commit. Requests, planned and actual actions, state, risk, authority and recovery contribute a conservative union of facets; module selection and dependency closure then follow deterministically. A local edit that becomes a push loads repository rules before the push. If it becomes a deployment, execution and verification rules join before deployment. Completion repeats routing against what actually happened.
 
 Full OOP Runtime Suitability requires verified interception at applicable project/session/resume/interaction, pre-effect, post-effect, completion and context-recovery paths, durable private state, local validation and any required operations/delegate controls. Native or external deterministic mechanisms can qualify. A tool without necessary per-interaction or completion blocking is not sufficiently capable to execute OOP integrally. It reports missing capabilities, practical consequences and usable limited scope; semantic fallback is not full enforcement. A previously verified control that disappears invalidates dependent readiness: repair and revalidate, or block and disclose it. No silent governance degradation is allowed.
 
@@ -239,6 +239,8 @@ Discover existing private layouts and shared references. Shared records are appe
 ### Daily freshness
 
 At the first user prompt of each day, use the user's timezone and shared same-day success/failure evidence to check configured OOP freshness with bounded synchronization. Preserve local work and failures; stop on quota/access/conflict instead of retrying. No scheduler or background polling is required. Re-enter bootstrap and selectively realign owned instructions, caches and loaded rules against the runtime's verified identity; synchronization alone is not adoption.
+
+Each AI tool identifies OOP by the full Git commit hash of its configured repository revision. Comparing the observed remote commit with the local commit and checking for local protocol changes establishes synchronization; each tool separately records its verified adopted commit. Offline remote freshness remains unknown. No distribution manifest is needed, and commit equality alone does not prove verified adoption.
 
 ### Default first installation
 
