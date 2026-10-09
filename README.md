@@ -3,26 +3,20 @@
 Let your project adopt OOP by copying this instruction into your AI tool:
 
 ```text
-Clone https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol.git into your main working folder and follow README.md.
+Clone https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol.git into your main working folder and follow dist/README.md.
 ```
-
-If you’re an AI following the instruction above, stop reading here and follow the instructions written [specifically for you](dist/README.md).
 
 ## What OOP is
 
-**OOP keeps your project from living only inside one AI's memory. It preserves the information needed to continue the work, reduces unnecessary rework, and lets another compatible AI pick up where the previous one stopped.**
+**The AI is replaceable. Your organization is not.** OOP lets run long-lived work with AI without making your company, project or professional activity depend on one chat, one model, one vendor or one AI's memory.
 
-OOP lets you run long-lived work with AI without making your company, project or professional activity depend on one chat, one model, one vendor or one AI's memory.
+**OOP keeps your project from living only inside one AI's memory. It preserves the information needed to continue the work in a <u>standardized, programmatic and deterministic way</u>, reduces unnecessary rework, and lets another compatible AI pick up where the previous one stopped.**
 
-**The AI is replaceable. The organization is not.** OOP becomes useful when AI work stops being only a conversation and starts becoming ongoing organizational work.
-
-This README is non-normative orientation. [PROMPT.md](PROMPT.md) alone defines OOP semantics; divergence here is documentation drift.
+It becomes useful when AI work stops being only a conversation and starts becoming ongoing organizational work.
 
 OOP is a vendor-neutral operating protocol telling capable AI tools how to work on a long-lived project in a durable, verifiable and resumable way. It applies to companies, non-profits, independent professionals and autonomous projects.
 
-OOP is not an agent runtime, a hosted backend, a SaaS service, a required cloud platform or a proprietary orchestration engine. It supplies rules and reference artifacts; each AI tool still needs the capabilities and permission to perform the work. OOP does not create authority, grant permissions, make a runtime more capable, automatically verify external reality, guarantee full runtime support or replace authoritative external systems. This repository does not claim deployed consumer integrations.
-
-**The 60-second explanation:** You tell the AI what you want. OOP helps it determine which project it is in, which rules matter, what it may change, what must be verified and what must be preserved so another AI can continue later.
+**The 60-second explanation:** You tell the AI what you want. OOP provides rules and reference artifacts that help it determine which project it is in, which rules matter, what it may change, what must be verified and what must be preserved so another AI can continue later.
 
 **Where time and money may be saved:** OOP reduces organizational friction and avoidable AI-work cost. It can reduce time spent re-explaining a project, duplicated work across sessions or tools, mistakes from lost or stale context, avoidable rollback and rework, and human time spent reconstructing decisions, responsibilities and current state. Keeping work portable reduces dependence on one AI vendor. Free-First / Zero-Cost Convergence can also avoid unnecessary SaaS and cloud spending; OOP does not directly generate profit or guarantee savings.
 
