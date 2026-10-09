@@ -8,9 +8,9 @@ Clone https://github.com/organizationorchestrationprotocol/organization-orchestr
 
 ## What OOP is
 
-**The AI is replaceable. Your organization is not.** OOP lets run long-lived work with AI without making your company, project or professional activity depend on one chat, one model, one vendor or one AI's memory.
+**The AI is replaceable. Your organization is not.** OOP supports long-lived work with AI without making your company, project or professional activity depend on one chat, one model, one vendor or one AI's memory.
 
-**OOP keeps your project from living only inside one AI's memory. It preserves the information needed to continue the work in a <u>standardized, programmatic and deterministic way</u>, reduces unnecessary rework, and lets another compatible AI pick up where the previous one stopped.**
+**OOP keeps your project from living only inside one AI's memory. It preserves the information needed to continue the work in a <ins>standardized, programmatic and formally verifiable way</ins>, reduces unnecessary rework, and lets another compatible AI pick up where the previous one stopped.**
 
 It becomes useful when AI work stops being only a conversation and starts becoming ongoing organizational work.
 
@@ -22,7 +22,7 @@ OOP is a vendor-neutral operating protocol telling capable AI tools how to work 
 
 OOP prefers capabilities you already have, local tools and free/open infrastructure before introducing paid services. It asks only for unavoidable meaningful decisions, remembers valid approvals for their exact scope and resumes authorized work after checking your answer. You do not need to choose cryptographic algorithms or automation internals; required identity and safety checks still apply. Real-world time and cost savings require observation.
 
-**For example:** After three months with AI Tool A, you hit usage limits, change subscription, prefer another tool or find Tool A unavailable. Without durable project state, you may have to rebuild the context, decisions, architecture, open work and constraints by hand. With OOP, AI Tool B reconstructs what it needs from durable project sources, verifies its own access and compatibility, and continues without depending on Tool A's chat memory. This can avoid hours of manual reconstruction and duplicated work; any benefit depends on the actual project and runtime.
+**For example:** After three months with AI Tool A, you hit usage limits, change your subscription, prefer another tool or find Tool A unavailable. Without durable project state, you may have to rebuild the context, decisions, architecture, open work and constraints by hand. With OOP, AI Tool B reconstructs what it needs from durable project sources, verifies its own access and compatibility, and continues without depending on Tool A's chat memory. This can avoid hours of manual reconstruction and duplicated work; any benefit depends on the actual project and runtime.
 
 ### When OOP is useful
 
@@ -55,7 +55,7 @@ This compares chat-only work with work applying OOP; other workflows can also pr
 
 ```text
 OOP        = how AI is expected to operate
-operations = what the organization knows, decided and is doing
+operations = what the organization knows, has decided and is doing
 .priv      = private technical/runtime state for this project
 AI runtime = a replaceable worker, with its own capabilities and authority
 ```
@@ -84,13 +84,15 @@ A capable AI can recover durable project state, understand work already in progr
 
 **The AI must not behave correctly only because it happens to remember the right rules from earlier in the chat.**
 
-OOP semantic judgment may depend on AI reasoning, but neither governance execution nor the availability and freshness of the normative context required for that judgment may depend on the AI remembering it.
+Under OOP, semantic judgment may depend on AI reasoning, but neither governance execution nor the availability and freshness of the normative context required for that judgment may depend on the AI remembering it.
 
 Governance correctness must not depend on accidental conversation-context retention.
 
 Conversation context is an execution cache, not a source of normative authority. Reopening an old chat, replacing a model or compacting context does not automatically preserve the right rules. The AI verifies current OOP and reloads only the missing or stale rules and facts it needs before continuing.
 
 ### What using OOP looks like
+
+Where supported, a verified runtime can assemble small, up-to-date instructions for the current action from OOP and authoritative project state, while independently checking what effects the AI is actually permitted to perform. This reduces reliance on remembered chat context without pretending AI reasoning becomes deterministic. The runtime can reject unauthorized effects and verify outcomes through its real controls; unsupported paths and remaining semantic uncertainty must be disclosed. Unchanged verified rules and evidence are reused rather than rebuilt for every step.
 
 You describe the outcome you want. A sufficiently capable, authorized AI checks the project and current rules, recovers relevant decisions and open work, performs and verifies the work, and preserves what another compatible AI needs to continue.
 
@@ -136,7 +138,7 @@ Project-local private/runtime state never crosses the boundary.
 
 Each consumer project/workspace has its own logical private root, canonical operations state and OOP checkout. Runtimes can share project-private resources only within the same verified workspace. A project-agnostic global sentinel discovers current-workspace governance without carrying project state; supported runtimes apply the lightweight current-OOP gate on every interaction, reusing valid same-day context. Old chats receive no exemption.
 
-Durable Git-backed ticket openings and state transitions are signed, signature-verified, pushed immediately and read back from the canonical remote before they are reported as canonical success. Users are notified when a ticket opens, at each state transition and when publication is blocked. The conformance suite reasons about these contracts and uses synthetic local fixtures; it does not claim live product hooks or provider execution.
+Durable Git-backed ticket openings and state transitions are signed, signature-verified, pushed immediately and read back from the canonical remote before they are reported as canonical success. Users are notified when a ticket opens, at each state transition and when publication is blocked.
 
 As a human, you do not need to learn the full protocol before using it. Start with the CTA above and describe the outcome you want. OOP is designed primarily for the AI runtime to read and apply. Use the [practical examples](examples.md) to understand the workflow in concrete terms.
 
@@ -162,7 +164,7 @@ OOP is a self-materializing governance protocol: it defines what must be true, w
 
 The compact **Semantic Routing Index** is derived metadata bound to the adopted OOP repository commit. Requests, planned and actual actions, state, risk, authority and recovery contribute a conservative union of facets; module selection and dependency closure then follow deterministically. A local edit that becomes a push loads repository rules before the push. If it becomes a deployment, execution and verification rules join before deployment. Completion repeats routing against what actually happened.
 
-Full OOP Runtime Suitability requires verified interception at applicable project/session/resume/interaction, pre-effect, post-effect, completion and context-recovery paths, durable private state, local validation and any required operations/delegate controls. Native or external deterministic mechanisms can qualify. A tool without necessary per-interaction or completion blocking is not sufficiently capable to execute OOP integrally. It reports missing capabilities, practical consequences and usable limited scope; semantic fallback is not full enforcement. A previously verified control that disappears invalidates dependent readiness: repair and revalidate, or block and disclose it. No silent governance degradation is allowed.
+Full OOP Runtime Suitability requires verified interception at applicable project/session/resume/interaction, pre-effect, post-effect, completion and context-recovery paths, durable private state, local validation and any required operations/delegate controls. Native or external deterministic mechanisms can qualify. A tool without necessary per-interaction or completion blocking is not sufficiently capable to implement OOP in full. It reports missing capabilities, practical consequences and usable limited scope; semantic fallback is not full enforcement. A previously verified control that disappears invalidates dependent readiness: repair and revalidate, or block and disclose it. No silent governance degradation is allowed.
 
 ### Entry, refresh and continuation
 
@@ -186,7 +188,7 @@ Continuity is proactive rather than reactive. When a runtime can reliably measur
 
 ### Organization and private topology
 
-First adoption discovers organizational facts before asking only material unresolved questions. Empty operations receives a Foundational Organization Intake and domain coverage such as verified, partial, unknown or deferred, with canonical references rather than an invented percentage. Identity, mission, roles, processes, assets and operational status are modeled when relevant.
+On first adoption, the AI discovers organizational facts before asking only material unresolved questions. An empty operations repository undergoes Foundational Organization Intake, with domain coverage recorded as verified, partial, unknown or deferred and supported by canonical references rather than an invented percentage. Identity, mission, roles, processes, assets and operational status are modeled when relevant.
 
 Each project keeps separate operations, private state and identity even on the same computer/account. Same-project runtimes can share purpose-named credentials and topology references; adapters and adoption remain runtime-owned. Legacy vendor-named shared resources are classified and preserved without blind renaming. Product/source repositories, operations and OOP are distinct references; if the required source reference is missing, the AI asks once for its address.
 
@@ -220,7 +222,7 @@ The destination verifies its own binding, required access and signing. Reconcile
 
 `available ≠ downloaded ≠ compatible ≠ target ≠ applied ≠ verified`. A downloaded release is not active; a selected target grants no execution authority.
 
-Each runtime owns its verified adoption checkpoint and distinguishes available, downloaded, compatible, target, applied and verified versions. Shared checkout, credentials or another runtime's adoption proves none of its own adoption. Only successful applicable verification advances the checkpoint; failed attempts preserve prior verified knowledge and record actual partial effects separately.
+Each runtime owns its verified adoption checkpoint and distinguishes available, downloaded, compatible, target, applied and verified versions. A shared checkout, shared credentials or another runtime's adoption does not establish that runtime's own adoption. Only successful applicable verification advances the checkpoint; failed attempts preserve prior verified knowledge and record actual partial effects separately.
 
 ### Organizational migration
 

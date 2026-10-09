@@ -352,6 +352,12 @@ For example, an unchanged attestation can reuse the same-day freshness result wi
 
 Tool A observes canonical remote commit R and a local checkout at R with unchanged committed protocol files: synchronization is verified. Tool B may share that checkout but still have verified adopted commit Q; B must evaluate the change and pass its own applicable adoption checks before advancing to R. With local protocol edits, the checkout is a working candidate rather than a synchronized baseline. When the remote is unavailable, its current commit remains unknown; a cached R is only the last observation. R and Q are illustrative placeholders, not usable commit IDs: actual checkpoints record the full Git object IDs and repository/ref scope.
 
+**Bounded pricing proposal.** A user asks to change a subscription price. The worker can research and propose changes but has no publication authority. Where supported, the runtime assembles applicable current rules and verified facts and confines executable operations to permitted scope. The AI proposes the price and dependency analysis. A syntactically valid proposal still lacks business approval; the publication path stays blocked until applicable approval, current-state and outcome checks pass.
+
+**Real interception versus illustrative instruction.** A prompt prohibits modifying a protected resource. An isolated script rejects a sample operation, but an installed alternate path can still change the resource: full prevention has not been demonstrated. After a verified effect gate covers the claimed paths, exercise harmless allowed and denied actions through actual installed invocation. Report only tested coverage and explicit remaining gaps.
+
+**Controlled correction after denial.** A proposal fails because its expected state is outdated. The runtime returns the minimum safe attributable factual reason and constraint references. The AI reads changed facts and proposes an authorized correction; repeating the unchanged denied action is neither progress nor permission to bypass the guard.
+
 Maintenance navigation: [canonical prompt](PROMPT.md).
 
 ## Context-independent governance and semantic routing
@@ -371,6 +377,10 @@ Maintenance navigation: [canonical prompt](PROMPT.md).
 | Completion discovers an actual deployment absent from the plan | Final rerouting adds execution postconditions; success stays blocked until those checks pass. |
 
 Conversation context is an execution cache, not a source of normative authority. Static expected facets in semantic-routing-scenarios.json do not prove autonomous live language classification. Local fixture models do not prove installed interception.
+
+**Revision changed during reasoning.** A candidate action used authoritative policy revision R12; policy has advanced to R13. Before the effect, the guard rejects the stale expected revision and selectively refreshes dependent scope, constraints and evidence. Independent authorized work continues. Where supported, an atomic conditional action binds the effect to the expected revision, closing the race between checking and writing.
+
+**Compaction and prompt reuse.** After context loss, remembered instructions cannot prove current context. The runtime verifies adopted protocol/source identities, reconstructs missing action context and reroutes if scope changed. Repeated homogeneous G1 edits under unchanged verified rules, authority and scope can instead reuse valid context without reading every module or rebuilding an identical prompt for each edit.
 
 ## Isolation, resources and runtime suitability
 
