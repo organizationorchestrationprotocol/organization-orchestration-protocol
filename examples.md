@@ -4,7 +4,7 @@ Describe the outcome you want. OOP gives a capable AI a shared operating discipl
 
 You can use that discipline across an entire organization: product, operations, suppliers, customer work, decisions and projects. The user does not need to name every team or write a perfect ticket first. The AI identifies relevant consequences and coordinates the work under the organization's actual policy.
 
-These are illustrative workflows, not reports of deployed integrations or additional protocol rules. OOP is a specification, not an execution engine. Available tools, access and authority determine what the AI can do; missing capabilities, approvals and physical interventions remain explicit blockers. Follow the [universal bootstrap](bootstrap/universal-bootstrap.md) first. The [canonical prompt](src/prompt.md) governs the behavior illustrated here.
+Demonstration scenarios are examples of OOP behavior.
 
 ## Choose a starting point
 
@@ -227,11 +227,11 @@ authorized steps using your actual capabilities. Keep material decisions,
 verified progress and blockers reconstructible for the next human or AI.
 ```
 
-For protocol maintenance rather than consumer work, follow the separate [maintainer entrypoint](maintenance/universal-maintainer.md) and [versioning contract](maintenance/versioning.md). These examples grant no authority and add no normative requirements.
+For protocol maintenance, follow the [canonical prompt](PROMPT.md).
 
 ## Unknown future AI continuation
 
-This example is informative, not normative, and describes expected behavior rather than a performed live test. AI A observes a reliable comparable 15% remaining active-session budget; no destination AI has been chosen.
+AI A observes a reliable comparable 15% remaining active-session budget; no destination AI has been chosen.
 
 ```text
 AI A warns user before preparation
@@ -261,8 +261,6 @@ A shared private root avoids secret copies. Separate roots or machines use remap
 
 ## Persistent workspace activation examples
 
-These examples are informative; source authority remains in the canonical prompt. Release maintenance follows [maintenance/versioning.md](maintenance/versioning.md).
-
 ### New chat tomorrow
 
 After an authorized first bootstrap establishes the workspace binding, a supported native pointer resolves it in a new chat. The runtime checks due freshness or reuses verified same-day evidence, independently verifies its adoption, reconciles relevant private/operations facts, shows alignment and classifies the request. Two chats on one day may reuse one successful remote check; two runtimes still have two adoption checkpoints. G0 explanation requires no ticket.
@@ -277,7 +275,7 @@ Discover the canonical identity and relevant current state, verify it and reuse 
 
 ### Future OOP release
 
-A stable pointer remains unchanged while verified adoption and realignment supply new rules. For example, rule X in a later eligible release is loaded from its verified context, never copied into the adapter. A changed bootstrap path requires owned pointer migration/verification before alignment. This is a hypothetical workflow; no successor release or live inheritance is asserted.
+A stable pointer remains unchanged while verified adoption and realignment supply new rules. For example, rule X in a later eligible revision is loaded from its verified context, never copied into the adapter. A changed bootstrap path requires owned pointer migration/verification before alignment.
 
 ### Compact alignment examples
 
@@ -289,7 +287,7 @@ Blocked: binding VERIFIED; new target available but migration BLOCKED; prior ver
 
 ## Project isolation and interaction examples
 
-These examples are informative. The active project identity determines every private and canonical scope.
+The active project identity determines every private and canonical scope.
 
 ### Project A initialized, Project B empty
 
@@ -344,8 +342,6 @@ A first-use destination independently bootstraps and resolves secure access. A r
 
 ## Self-materializing governance examples
 
-These examples are non-normative illustrations of the canonical source, not additional requirements.
-
 | Environment | One invariant: validate governance before a local file mutation | Actual guarantee |
 | --- | --- | --- |
 | Persistent instructions plus native pre-operation and completion gates | Derive private controls from current OOP, test allowed/denied paths, bind digest/capabilities and block stale state before effects and completion | Deterministic only for tested reachable paths; residual coverage remains explicit |
@@ -356,11 +352,9 @@ For example, an unchanged attestation can reuse the same-day freshness result wi
 
 Tool A observes canonical remote commit R and a local checkout at R with unchanged committed protocol files: synchronization is verified. Tool B may share that checkout but still have verified adopted commit Q; B must evaluate the change and pass its own applicable adoption checks before advancing to R. With local protocol edits, the checkout is a working candidate rather than a synchronized baseline. When the remote is unavailable, its current commit remains unknown; a cached R is only the last observation. R and Q are illustrative placeholders, not usable commit IDs: actual checkpoints record the full Git object IDs and repository/ref scope.
 
-Maintenance navigation: [versioning contract](maintenance/versioning.md).
+Maintenance navigation: [canonical prompt](PROMPT.md).
 
 ## Context-independent governance and semantic routing
-
-These are non-normative illustrations for humans and AI consumers/maintainers; src/prompt.md supplies authority.
 
 | Scenario | Expected behavior and evidence |
 | --- | --- |
@@ -416,8 +410,6 @@ A user reopens a chat from two weeks ago. OOP has changed, or the model context 
 
 ## Everyday continuity beyond software
 
-These examples are non-normative illustrations, not measured outcomes. OOP does not create authority, grant permissions, make a runtime more capable, automatically verify external reality, guarantee full runtime support or replace authoritative external systems. Actual access, approvals and verification still apply.
-
 ### Freelance / independent professional
 
 A consultant changes from AI Tool A to AI Tool B midway through a client engagement. B reconstructs agreed deliverables, decisions, deadlines, blockers, open questions and next permitted actions from durable sources. If a report awaits client approval, B preserves that boundary instead of treating a saved draft as approved.
@@ -448,15 +440,13 @@ Informative: after compaction, reroute the next action, load only missing or sta
 
 ## Second project in the same AI environment
 
-This non-normative example illustrates reuse without state sharing. Project A already enabled generic environment controls. When Project B opens, the runtime validates their identity and dependencies and reuses still-valid capability evidence. It independently establishes B's identity, binding, adoption and private state, then checks isolation and B-specific integration/reachability. There is one generic setup and two independent project adoptions; A's operations, private state and authority never become B's. If a generic mechanism is invalid but safely repairable, repair comes before replacement.
+Project A already enabled generic environment controls. When Project B opens, the runtime validates their identity and dependencies and reuses still-valid capability evidence. It independently establishes B's identity, binding, adoption and private state, then checks isolation and B-specific integration/reachability. There is one generic setup and two independent project adoptions; A's operations, private state and authority never become B's. If a generic mechanism is invalid but safely repairable, repair comes before replacement.
 
 ## Different verified OOP identities
 
-This non-normative example uses Project A with verified OOP content identity A and Project B with verified identity B, potentially at different versions. The same thin version-neutral global sentinel identifies the current workspace and resolves its local binding independently. Updating B changes only B's verified adoption and applicable derived state; A retains identity A. The sentinel contains neither a project version nor copied release rules.
+Project A has verified OOP content identity A and Project B has verified identity B, potentially at different versions. The same thin version-neutral global sentinel identifies the current workspace and resolves its local binding independently. Updating B changes only B's verified adoption and applicable derived state; A retains identity A. The sentinel contains neither a project version nor copied release rules.
 
 ## Authorized project identity and real control invocation
-
-These are informative scenarios, not deployed integrations or alternative authority. Follow the canonical Project-isolated effective authority and Enforcement materialization lifecycle contracts.
 
 1. **Fresh project, working personal login.** The AI finds a valid personal provider session in the host environment. That success grants no project permission. It resolves the current project's authorized identity reference and isolates inherited settings before sensitive effects. If none exists and required work authorizes preparation, it prepares a minimum-privilege identity; unrelated reading creates nothing.
 2. **Project A credential visible from B.** A's secret is accessible on the same machine. B cannot use it merely because the owner matches. Only an explicit independently verified B/destination/operation/purpose delegation can authorize an external reference. A revoked B identity cannot trigger fallback to A or to a personal login. Independent safe reading may continue.
@@ -468,7 +458,7 @@ A conditional Git/SSH adapter can select its authorized key and isolated executi
 
 ## Optional stronger publisher policy examples
 
-These simulated informative narratives apply only to separately explicitly selected stronger publisher policy. They are not the default first install, deployed controls or measured outcomes. BOOT-04 and canonical UX-01–UX-08 govern their scope.
+These scenarios apply to a separately explicitly selected stronger publisher policy. BOOT-04 and canonical UX-01–UX-08 govern their scope.
 
 | Situation | User interaction and actual next step |
 | --- | --- |
@@ -485,11 +475,9 @@ These simulated informative narratives apply only to separately explicitly selec
 | Two tools share one project's trust reference | Each verifies current scope, origin, status and key binding and independently adopts; Project B cannot import Project A's acceptance. |
 | Missing installed interception | "This tool cannot yet stop the protected action before it runs. That action remains paused; I can finish the independent documentation." No full-enforcement claim from local fixtures. |
 
-For example, three entries with the same valid project/source decision need one initial trust answer rather than three repeated answers. This is expected contract behavior, not an observed reduction in real-world time or cost. Required ticket notifications and entry alignment remain brief and truthful; formal evidence stays available.
+For example, three entries with the same valid project/source decision need one initial trust answer rather than three repeated answers. Required ticket notifications and entry alignment remain brief and truthful; formal evidence stays available.
 
 ## Full first setup examples
-
-These informative flows describe expected behavior, not verified live deployments.
 
 | Situation | Observable flow |
 | --- | --- |
@@ -504,4 +492,4 @@ These informative flows describe expected behavior, not verified live deployment
 | Unsupported or revoked path | Finish independent safe setup, identify the precise unavailable/revoked protection and affected actions, retain restriction and supported next step; never say fully active. |
 | Interrupted creation | Read checkpoint and discover actual remote state before retry; reuse the already-created repository rather than create a second one. |
 
-For example, two authorized tools in Project A use one secure credential reference and two independent adoption records. Project B cannot inherit either authority or readiness. Later entries reuse valid facts and selectively refresh changed controls; this describes reduced duplicate work without measured savings.
+For example, two authorized tools in Project A use one secure credential reference and two independent adoption records. Project B cannot inherit either authority or readiness. Later entries reuse valid facts and selectively refresh changed controls.

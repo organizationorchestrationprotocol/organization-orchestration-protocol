@@ -2,11 +2,13 @@
 
 ## Unreleased
 
+SD-OOP-DOCUMENTATION-AND-PUBLICATION — Owner-authorized change: simplify demonstration introductions, remove the distribution-risk acceptance declaration, and replace mandatory OOP release immutability, SemVer selection and signed commit/tag production with Git commit-based revision publication. Canonical changes affect Publisher trust bootstrap, Protocol revision publication and BOOT-04 reconciliation; commit identity, compatibility, migration, independent adoption, validation, authorization and organizational signing remain in force. README and examples follow the revised source; changelog reporting is condensed. Schema, test and generated-artifact requirements are unchanged. This entry supersedes the producer release constraints described in the historical entries below.
+
 SD-OOP-COMMIT-IDENTITY — Owner-authorized semantic change: remove the OOP distribution manifest and replace its source/release-index role with full Git commit identity scoped to the canonical OOP repository and selected ref. The affected source provisions are Semantic Routing Index and deterministic closure, Protocol adoption lifecycle, OOP repository commit identity and synchronization, Daily protocol freshness, Independent adoption facts, and bootstrap/entry evidence. This deliberately introduces Git commit identification for OOP itself; organizational sources of record retain their existing backend neutrality.
 
 Synchronization compares observed remote and local commits plus actual protocol working-tree state. Runtime-owned adopted commits remain independent and advance only after applicable compatibility, authority, migration, realignment and validation checks. Offline state, uncommitted candidates and historical version/digest checkpoints remain explicit. Commit equality proves neither publisher authenticity nor verified adoption. Unrelated authority, signing, privacy, continuity and publication requirements are retained; handoff and recovery manifests remain distinct.
 
-Impact: PROMPT.md changes normatively; README and examples explain the new contract; maintainer guidance remains in those existing files. No schemas, executable test suite or generated routing/distribution artifacts exist in this checkout to regenerate. The existing manifest is removed. The positive/negative synchronization and independent-adoption scenarios in examples.md are illustrative semantic coverage, not executed runtime tests. Source identity and exact edits are reconstructible from the Git diff against the pre-change checkout; no previously verified regression baseline or release-readiness claim is invented. Live consumer synchronization/adoption and release publication are not performed by this change.
+Impact: PROMPT.md defines the new contract; README and examples explain it. The manifest is removed, and synchronization and independent-adoption scenarios are added to examples.md. Source changes are traceable through the Git diff.
 
 ## 1.0.0
 

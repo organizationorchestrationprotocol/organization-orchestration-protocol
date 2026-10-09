@@ -246,8 +246,6 @@ Each AI tool identifies OOP by the full Git commit hash of its configured reposi
 
 The instruction above requests full setup: the AI prepares private local state, resolves your project source, reuses authorized access, connects or legitimately creates private operations, and installs/tests the controls its environment supports. It asks only at a genuine missing dependency, such as your source address or provider-only key enrollment. It resumes after checking the actual result.
 
-The default first install does not ask you to trust an OOP publisher or verify signatures, checksums or a release inventory. Selecting the OOP URL accepts that distribution risk; independent authenticity/integrity is not claimed. You may separately choose a stronger policy. Project credentials, operations access and maintainer release signing retain their safeguards.
-
 ## For AI tools maintaining this repository
 
 [PROMPT.md](PROMPT.md) is the **Canonical Normative Prompt** and single source of organizational norms. Read it completely before normative changes, including tables, examples, exceptions and unnumbered material.
@@ -256,9 +254,9 @@ Normative edits start in the source. Derive Core and on-demand modules from comp
 
 Reuse valid freshness evidence during bounded upstream synchronization; preserve local work. Persist English content and localize interaction to the user's language. This README provides orientation; the canonical source defines the protocol.
 
-### Creating the next OOP version
+### Publishing an OOP revision
 
-Published releases are immutable. Resolve the effective latest published release before choosing a version. These are producer release checks; default consumer onboarding follows BOOT-04. Review semantic compatibility, decide whether a release is required, select PATCH/MINOR/MAJOR, identify the immediate predecessor, create its ordered migration and regenerate complete distribution/validation evidence. Finalize under authorization with one signed release commit and its signed annotated tag. Do not infer publication from committed stage fields alone for signed-tag transport.
+OOP revisions are identified by their full Git commit IDs. Review and validate changes before publishing them to the configured repository. Assess compatibility and any migrations required for runtime adoption.
 
 ### Formats and license
 
