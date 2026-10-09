@@ -354,6 +354,8 @@ Tool A observes canonical remote commit R and a local checkout at R with unchang
 
 **Bounded pricing proposal.** A user asks to change a subscription price. The worker can research and propose changes but has no publication authority. Where supported, the runtime assembles applicable current rules and verified facts and confines executable operations to permitted scope. The AI proposes the price and dependency analysis. A syntactically valid proposal still lacks business approval; the publication path stays blocked until applicable approval, current-state and outcome checks pass.
 
+**Same policy, different wording.** An AI may prepare a subscription-price change but cannot publish it. The runtime may phrase its instructions differently, while verified constraints retain proposal-only authority, the current governing policy and the publication approval requirement. Matching prompt text or digest does not prove current authorization.
+
 **Real interception versus illustrative instruction.** A prompt prohibits modifying a protected resource. An isolated script rejects a sample operation, but an installed alternate path can still change the resource: full prevention has not been demonstrated. After a verified effect gate covers the claimed paths, exercise harmless allowed and denied actions through actual installed invocation. Report only tested coverage and explicit remaining gaps.
 
 **Controlled correction after denial.** A proposal fails because its expected state is outdated. The runtime returns the minimum safe attributable factual reason and constraint references. The AI reads changed facts and proposes an authorized correction; repeating the unchanged denied action is neither progress nor permission to bypass the guard.
@@ -381,6 +383,8 @@ Conversation context is an execution cache, not a source of normative authority.
 **Revision changed during reasoning.** A candidate action used authoritative policy revision R12; policy has advanced to R13. Before the effect, the guard rejects the stale expected revision and selectively refreshes dependent scope, constraints and evidence. Independent authorized work continues. Where supported, an atomic conditional action binds the effect to the expected revision, closing the race between checking and writing.
 
 **Compaction and prompt reuse.** After context loss, remembered instructions cannot prove current context. The runtime verifies adopted protocol/source identities, reconstructs missing action context and reroutes if scope changed. Repeated homogeneous G1 edits under unchanged verified rules, authority and scope can instead reuse valid context without reading every module or rebuilding an identical prompt for each edit.
+
+**Ten edits, still-checked effects.** An AI revises ten descriptions under unchanged approved constraints. The runtime reuses valid governance context and evidence instead of rereading the full rules or calling another model for every edit; each protected write still passes its applicable gate. Attempted publication, a forbidden resource, changed scope or an outdated revision causes the relevant checks to be reconsidered.
 
 ## Isolation, resources and runtime suitability
 

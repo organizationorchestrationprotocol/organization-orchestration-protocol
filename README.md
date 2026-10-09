@@ -94,6 +94,8 @@ Conversation context is an execution cache, not a source of normative authority.
 
 Where supported, a verified runtime can assemble small, up-to-date instructions for the current action from OOP and authoritative project state, while independently checking what effects the AI is actually permitted to perform. This reduces reliance on remembered chat context without pretending AI reasoning becomes deterministic. The runtime can reject unauthorized effects and verify outcomes through its real controls; unsupported paths and remaining semantic uncertainty must be disclosed. Unchanged verified rules and evidence are reused rather than rebuilt for every step.
 
+**Less repeated work, without fewer safeguards.** When its AI tool supports the necessary controls, OOP can reuse rules and checks that are still valid instead of repeating them for every small action. The AI must still respect the authorization and safety checks for what it actually does. For example, preparing ten product descriptions can reuse the same approved constraints; publishing them requires the appropriate separate authorization. This can reduce wasted AI usage and rework, but actual savings depend on the tool and task.
+
 You describe the outcome you want. A sufficiently capable, authorized AI checks the project and current rules, recovers relevant decisions and open work, performs and verifies the work, and preserves what another compatible AI needs to continue.
 
 A reopened chat follows the same checks. The project's saved state carries continuity; remembering an earlier conversation does not establish that its rules are current.
