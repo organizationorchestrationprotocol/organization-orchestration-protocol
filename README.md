@@ -3,7 +3,7 @@
 Let your project adopt OOP by copying this instruction into your AI tool:
 
 ```text
-Clone https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol.git into your main working folder and follow dist/entry.json.
+Clone https://github.com/organizationorchestrationprotocol/oop.git into your main working folder and follow dist/entry.json.
 ```
 
 ## What OOP is

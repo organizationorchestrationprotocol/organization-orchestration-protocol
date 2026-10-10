@@ -149,7 +149,7 @@ save('dist/entry.json',{
   contract_profile:'urn:oop:derived:contract:1',
   authority:'../PROMPT.md is canonical. This is derived operational context; source controls conflicts.',
   version:'Record available repository/ref/full containing Git commit from version metadata. Producer source_snapshot is not runtime adoption or a version manifest.',
-  source_snapshot:{repository:'https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol.git',ref:'main',commit:commit.stdout.trim(),path:'PROMPT.md'},
+  source_snapshot:{repository:'https://github.com/organizationorchestrationprotocol/oop.git',ref:'main',commit:commit.stdout.trim(),path:'PROMPT.md'},
   activation:'Official installation intent starts full_install immediately after required initial explanation; other requests use the applicable lifecycle route.',
   minimum_context:['modules/core.json','modules/workspace.json','modules/context.json','modules/entry.json'],
   selector:'routing.json',procedures:{bootstrap:'procedures/bootstrap.json',lifecycle:'procedures/lifecycle.json'},interfaces:'interfaces.json',

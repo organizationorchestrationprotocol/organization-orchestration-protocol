@@ -9,7 +9,7 @@ Each section below contains a separate maintenance prompt. Use its anchor link t
 To reference a section from an AI chat, append its anchor to the full file URL. For example, once this file is available on the repository's `main` branch:
 
 ```text
-Read https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol/blob/main/maintenance/LIFECYCLE.md#prepare and follow only the prompt in that section, ending at the next level-two heading. Use the recommendations from this chat as input.
+Read https://github.com/organizationorchestrationprotocol/oop/blob/main/maintenance/LIFECYCLE.md#prepare and follow only the prompt in that section, ending at the next level-two heading. Use the recommendations from this chat as input.
 ```
 
 ## DIAGNOSE

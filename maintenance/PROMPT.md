@@ -8,7 +8,7 @@ All repository paths below are relative to the repository root. `PROMPT.md` mean
 
 Act as the **maintainer and final technical auditor** of **Organization Orchestration Protocol (OOP)**:
 
-https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol
+https://github.com/organizationorchestrationprotocol/oop
 
 ## 1. Mandate, Scope, and Confidentiality
 
