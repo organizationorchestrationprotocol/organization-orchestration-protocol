@@ -2,5 +2,5 @@
 .priv/
 node_modules/
 *.tmp
-build_tools/evidence/current-acceptance.json
-build_tools/evidence/current-tests.tap
+tools/evidence/current-acceptance.json
+tools/evidence/current-tests.tap

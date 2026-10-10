@@ -1,0 +1,811 @@
+{
+  "format": 1,
+  "source_identity": "sha256:898433ac36432129a5b30ce17493efc0197c0b635dd074e8164f3da18a50dc93",
+  "review": {
+    "basis": "Complete semantic reading of PROTOCOL.md followed by explicit allocation; line spans only locate reviewed clauses. No heading-to-module or keyword inference.",
+    "preservation": "All original source wording, scope, exceptions, tables, examples and normative convention are retained after CRLF-to-LF normalization, except for the owner-authorized PROMPT.md to PROTOCOL.md and dist/ to distribution/ path substitutions. Examples retain their non-authorizing status.",
+    "formalization": "Structured boundaries refer to complete semantic clauses. They do not decide semantic judgments or manufacture facts. Formal bootstrap guards are necessary checks, not sufficient authorization.",
+    "coreRationale": "Precedence, authority, proportionality, language, consumer exclusions, state separation and evidence invariants apply across routes. Entry/context/workspace add current identity and availability; conditional business modules remain on demand.",
+    "dependencyRationale": "Dependencies are conservative prerequisites from reviewed meaning. Effectful branches add action/security/execution facets even when a request initially seems informational. Context assembly never grants authority.",
+    "limitations": [
+      "Semantic review performed by the producing AI; no independent human/second-model approval claimed.",
+      "No runtime adapter, provider enrollment or consumer installation executed by this package."
+    ]
+  },
+  "spans": [
+    {
+      "id": "OOP-mandate-authority",
+      "start": 1,
+      "end": 75,
+      "module": "core",
+      "content_identity": "sha256:a06473e6f677d0c36c0b525627d8d1a5dd163dcd05c3b4a57b994b751d4fef4a"
+    },
+    {
+      "id": "OOP-enforcement-autonomy",
+      "start": 76,
+      "end": 155,
+      "module": "core",
+      "content_identity": "sha256:c51da3e29f7acf69fff207f549be8b96a0d689c2fc3f0973cfe5608d07d8fe29"
+    },
+    {
+      "id": "OOP-delegate-governance",
+      "start": 156,
+      "end": 159,
+      "module": "delegation",
+      "content_identity": "sha256:a84e9889b010f12174b7ad688966b0da5b43e7a9023b584637d3e740729283c0"
+    },
+    {
+      "id": "OOP-transitions-routing",
+      "start": 160,
+      "end": 234,
+      "module": "core",
+      "content_identity": "sha256:acecb4073269a911786e46319f1147315e72a8b8611a7efbcc1770e0a60bbf39"
+    },
+    {
+      "id": "OOP-technology-neutrality",
+      "start": 235,
+      "end": 277,
+      "module": "core",
+      "content_identity": "sha256:95515e7e499f06a9a1df329ffebf5b7f597bf3ce6253cec58c7595d08d6c66a5"
+    },
+    {
+      "id": "OOP-canonical-language",
+      "start": 278,
+      "end": 364,
+      "module": "core",
+      "content_identity": "sha256:740e161258aaedcdb88c1c42eed9a5ad3d9d83ad72f5c9e900d4099c4788ba91"
+    },
+    {
+      "id": "OOP-localized-presentation",
+      "start": 365,
+      "end": 406,
+      "module": "core",
+      "content_identity": "sha256:decb2286cc17b743f6f90e1fb994e298a6ae09aded0fc95d98a2fc97cd5ee134"
+    },
+    {
+      "id": "OOP-private-boundary",
+      "start": 407,
+      "end": 463,
+      "module": "workspace",
+      "content_identity": "sha256:d9421b5eb21ee58531d4fe631786a5d786c6e5fbbb4b77617592404f520bafd4"
+    },
+    {
+      "id": "OOP-shared-coordination",
+      "start": 464,
+      "end": 498,
+      "module": "shared-context",
+      "content_identity": "sha256:1462037e78e8652f8faae04cfb0c45b97a41ace28f52e6da48eb820f7c21df81"
+    },
+    {
+      "id": "OOP-persistent-activation",
+      "start": 499,
+      "end": 553,
+      "module": "activation",
+      "content_identity": "sha256:d51ceec30a01bda012222051b36343e640b230f42c07b9b395ef8a4acf4643d8"
+    },
+    {
+      "id": "OOP-consumer-exclusions",
+      "start": 554,
+      "end": 561,
+      "module": "core",
+      "content_identity": "sha256:0aabbd1d0c052922c0d05935a95698ea46e418ebdf38d8dca017a8e29a64014a"
+    },
+    {
+      "id": "OOP-runtime-adoption",
+      "start": 562,
+      "end": 640,
+      "module": "adoption",
+      "content_identity": "sha256:372bc5af92f301e4ebe8530890bd96c1008a1ff8210e8027a27b45c6beecee94"
+    },
+    {
+      "id": "OOP-capability-lifecycle",
+      "start": 641,
+      "end": 762,
+      "module": "capabilities",
+      "content_identity": "sha256:47a966adc4ca21b4780adaf89614aa56ddca394ed058aa65e671dfc87a83bd0b"
+    },
+    {
+      "id": "OOP-free-first",
+      "start": 763,
+      "end": 936,
+      "module": "cost",
+      "content_identity": "sha256:d982969e4492e17d2d1f9001b80e9bdf18e7ae2efbdac1f25b23114abcbaebc3"
+    },
+    {
+      "id": "OOP-repository-bootstrap",
+      "start": 937,
+      "end": 988,
+      "module": "repository",
+      "content_identity": "sha256:e1a64c68345fbe37621fee794ee2b8afe6ee16ee23c1e2d93f0dfda7713a2d15"
+    },
+    {
+      "id": "OOP-scoped-credentials",
+      "start": 989,
+      "end": 1031,
+      "module": "security",
+      "content_identity": "sha256:7df770f63b9ab36d52eb2a9523dfe6804f21438013f34d11abfcf73057c0b7de"
+    },
+    {
+      "id": "OOP-canonical-operations",
+      "start": 1032,
+      "end": 1086,
+      "module": "operations",
+      "content_identity": "sha256:196747a575fb3a9ebca35dd0b91b0e65a48ad21e6bd97d445b559b255aa0777c"
+    },
+    {
+      "id": "OOP-organizational-migration",
+      "start": 1087,
+      "end": 1149,
+      "module": "migration",
+      "content_identity": "sha256:88202d8d1f50115946b613437296165aad71b7fb813fd1dcac8a4cc55039aa30"
+    },
+    {
+      "id": "OOP-organizational-model",
+      "start": 1150,
+      "end": 1298,
+      "module": "model",
+      "content_identity": "sha256:e4aacc5f9e462e3107eb44a4dd5501a0c9ef62731e099d59a1b9117dd52e5a98"
+    },
+    {
+      "id": "OOP-repository-inventory",
+      "start": 1299,
+      "end": 1327,
+      "module": "inventory",
+      "content_identity": "sha256:33e56341484a5d7b7bb1de17e2a102311f87d473516da0dedc9768cb6eeb45cf"
+    },
+    {
+      "id": "OOP-request-discovery",
+      "start": 1328,
+      "end": 1430,
+      "module": "intake",
+      "content_identity": "sha256:09bf56201e307d65ba87d754f248c49d481ad1410a50f2dd56e2a924289c0cb8"
+    },
+    {
+      "id": "OOP-ticket-lifecycle",
+      "start": 1431,
+      "end": 1589,
+      "module": "tickets",
+      "content_identity": "sha256:42c0a486938b80e69f192fb2e0cae581a259564fb6594777983e2c5f17e08a1e"
+    },
+    {
+      "id": "OOP-continuity-reserve",
+      "start": 1590,
+      "end": 1651,
+      "module": "continuity",
+      "content_identity": "sha256:179ad734aa0348a6e450a0d2bb3c6d721beeca7183def61c831793af713e0484"
+    },
+    {
+      "id": "OOP-portable-transfer",
+      "start": 1652,
+      "end": 1818,
+      "module": "handoff",
+      "content_identity": "sha256:2dc7972ee6a8718a950d53c69f1f91515e7c46535d16041560e4e1a09c4e1741"
+    },
+    {
+      "id": "OOP-destination-intake",
+      "start": 1819,
+      "end": 1869,
+      "module": "destination",
+      "content_identity": "sha256:82f85be6c3b990c8314731838985430225ecd7badabaa3c8de8af8061d33d1aa"
+    },
+    {
+      "id": "OOP-sensitive-transfer",
+      "start": 1870,
+      "end": 1991,
+      "module": "secret-transfer",
+      "content_identity": "sha256:7588b90fec961cc2c93bf1a0330b15eecdd78aa9b1c58c92255efd264f67e023"
+    },
+    {
+      "id": "OOP-handoff-durability",
+      "start": 1992,
+      "end": 2145,
+      "module": "handoff",
+      "content_identity": "sha256:3286993cf40c1333f38b8e3d5fd37514ca03cef3f8bd5c99361cf94cfc65b2ba"
+    },
+    {
+      "id": "OOP-asynchronous-recovery",
+      "start": 2146,
+      "end": 2182,
+      "module": "recovery",
+      "content_identity": "sha256:521812dcbab75868801cbd3ba2d425a82c2637f189dbacde4246d4f439f21df4"
+    },
+    {
+      "id": "OOP-state-separation",
+      "start": 2183,
+      "end": 2218,
+      "module": "core",
+      "content_identity": "sha256:6b74016bd17eaecd303c2612fc084f462cb2c1258385a4c55dcc413a0abb8f94"
+    },
+    {
+      "id": "OOP-decision-history",
+      "start": 2219,
+      "end": 2238,
+      "module": "decisions",
+      "content_identity": "sha256:f3272555bdf4433055fb94b7bff9bc9f8859e253be5b06224ba0038ccccdb124"
+    },
+    {
+      "id": "OOP-human-prerequisite",
+      "start": 2239,
+      "end": 2268,
+      "module": "human",
+      "content_identity": "sha256:f2a3ba118504325722fdd3df503dd469d2f9bdc3437a0a4d2f0317818f77ad56"
+    },
+    {
+      "id": "OOP-physical-organization",
+      "start": 2269,
+      "end": 2304,
+      "module": "physical",
+      "content_identity": "sha256:e5a1b6739cab2fbbdaec9cbe4067ad5ee4c7aae3b596cb50f11217cdea392f73"
+    },
+    {
+      "id": "OOP-impact-propagation",
+      "start": 2305,
+      "end": 2449,
+      "module": "impact",
+      "content_identity": "sha256:80908d954a776e31c75d21f4f423192f681813b0af31c696948c486f7afdd8aa"
+    },
+    {
+      "id": "OOP-proportionate-evolution",
+      "start": 2450,
+      "end": 2467,
+      "module": "impact",
+      "content_identity": "sha256:da235e1c92906e97c91ed06e5e7dd2076479fdc367421a97b7b0348b8813c4d7"
+    },
+    {
+      "id": "OOP-reviewable-changes",
+      "start": 2468,
+      "end": 2557,
+      "module": "changes",
+      "content_identity": "sha256:46357f8721d99d739c241176e4542c122afa02b4ac2313efb0af99d1e30bc9ee"
+    },
+    {
+      "id": "OOP-effect-verification",
+      "start": 2558,
+      "end": 2589,
+      "module": "execution",
+      "content_identity": "sha256:713053002cdfae2f7f222ec93782d6c3934731fa132d310909fc7f8ecdb211a2"
+    },
+    {
+      "id": "OOP-semantic-ci",
+      "start": 2590,
+      "end": 2646,
+      "module": "ci",
+      "content_identity": "sha256:b9fc433b89ee1e396b683cd19841c8427ebaeb63ee55b0a78720fd3ea9c0c2ed"
+    },
+    {
+      "id": "OOP-controlled-delivery",
+      "start": 2647,
+      "end": 2747,
+      "module": "delivery",
+      "content_identity": "sha256:b4317ee5877bbef6e909dd80fdea87e23242a4e4b1617207c6581f87b920347c"
+    },
+    {
+      "id": "OOP-temporal-history",
+      "start": 2748,
+      "end": 2811,
+      "module": "history",
+      "content_identity": "sha256:9f65a0b1d303d48b0435cc656e2ac3361406453d92dd325c58a565894292bfca"
+    },
+    {
+      "id": "OOP-external-projections",
+      "start": 2812,
+      "end": 2840,
+      "module": "interfaces",
+      "content_identity": "sha256:4603261b9d26f159e3c5611024335f1b73405bf11aee34e06896a5bac23f1dca"
+    },
+    {
+      "id": "OOP-evidence-reuse",
+      "start": 2841,
+      "end": 2865,
+      "module": "core",
+      "content_identity": "sha256:f5cd4566fa3f3ac546d2f703efd809f0f1851748444cfb5461808d402a87907f"
+    },
+    {
+      "id": "OOP-producer-publication",
+      "start": 2866,
+      "end": 2869,
+      "module": "producer",
+      "content_identity": "sha256:f038b05e1ba1e4a09273c17a06b46e203d9182eb871c48a47ac55ec15c98216f"
+    },
+    {
+      "id": "OOP-producer-acceptance",
+      "start": 2870,
+      "end": 2936,
+      "module": "producer",
+      "content_identity": "sha256:697bb47a15b4e45d02064efdcb9c170b5a330e77bff63d1e094b9865078954e3"
+    },
+    {
+      "id": "OOP-interaction-entry",
+      "start": 2937,
+      "end": 2966,
+      "module": "entry",
+      "content_identity": "sha256:58509b2e983e8bab7ed635ac48728c41bd896ba37dc1ba20bb2fcaa86887848f"
+    },
+    {
+      "id": "OOP-full-install",
+      "start": 2967,
+      "end": 2992,
+      "module": "bootstrap",
+      "content_identity": "sha256:427f89a0524367d13ad5127cb54f548a26173039ef939a9ac9bdbdebed054d77"
+    },
+    {
+      "id": "OOP-bootstrap-system",
+      "start": 2993,
+      "end": 3012,
+      "module": "bootstrap",
+      "content_identity": "sha256:10394bde89836f1f2cdb52315909fc5002ef2ce33c78f494fab06ddc371d1dae"
+    },
+    {
+      "id": "OOP-bootstrap-attestation",
+      "start": 3013,
+      "end": 3018,
+      "module": "bootstrap",
+      "content_identity": "sha256:2ffcd8321e2a8811775c5bdccd97b2cc853285b6853f6ca3d0b8ceb4c4574458"
+    },
+    {
+      "id": "OOP-validity-refresh",
+      "start": 3019,
+      "end": 3028,
+      "module": "entry",
+      "content_identity": "sha256:8528d888f0d6efea24244eeba1c1a907c753b87444454331920f22c330e257dc"
+    },
+    {
+      "id": "OOP-available-context",
+      "start": 3029,
+      "end": 3044,
+      "module": "context",
+      "content_identity": "sha256:0279b188264b6b524faf4ad32b01839321af083f7e030be9023ec452d5d140c9"
+    },
+    {
+      "id": "OOP-bootstrap-communication",
+      "start": 3045,
+      "end": 3058,
+      "module": "bootstrap",
+      "content_identity": "sha256:1579497bf5f4cdf12fa55d77a9603c338de12b95d625e57e0d3c561af1d6af20"
+    },
+    {
+      "id": "OOP-minimum-entry",
+      "start": 3059,
+      "end": 3071,
+      "module": "entry",
+      "content_identity": "sha256:63a7420afaba601778e0234e17d8a5a2854177ac93b30e2a78f19c19880d33c8"
+    },
+    {
+      "id": "OOP-continuation-entry",
+      "start": 3072,
+      "end": 3075,
+      "module": "destination",
+      "content_identity": "sha256:d758cca419d6366cc00c5daf79c614a6a74314d8ed29fb5ec501b5b326bb4c96"
+    },
+    {
+      "id": "OOP-progressive-entry",
+      "start": 3076,
+      "end": 3091,
+      "module": "entry",
+      "content_identity": "sha256:6a3b466998dd6e2822f8e6a33e329fb36f84270d2a91e11384d74461ac51d46c"
+    },
+    {
+      "id": "OOP-portable-final-invariants",
+      "start": 3092,
+      "end": 3144,
+      "module": "core",
+      "content_identity": "sha256:cacccef6500d93c3feba865ceadaf6dc6a0e253cc335f0f7a5eecb0d8da833bd"
+    }
+  ],
+  "modules": [
+    {
+      "id": "core",
+      "purpose": "Canonical precedence, governance, authority, language, evidence and portable continuity invariants.",
+      "dependencies": [],
+      "facets": [
+        "information",
+        "interaction"
+      ]
+    },
+    {
+      "id": "workspace",
+      "purpose": "Current-project private identity, protection, ownership and state isolation.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "workspace_identity",
+        "workspace_switch",
+        "private_write"
+      ]
+    },
+    {
+      "id": "shared-context",
+      "purpose": "Scoped private hints, supersession and conflict-safe shared coordination.",
+      "dependencies": [
+        "workspace"
+      ],
+      "facets": [
+        "shared_context"
+      ]
+    },
+    {
+      "id": "activation",
+      "purpose": "Bindings, thin owned activation adapters and version-neutral global discovery.",
+      "dependencies": [
+        "workspace"
+      ],
+      "facets": [
+        "activation",
+        "full_install"
+      ]
+    },
+    {
+      "id": "capabilities",
+      "purpose": "Strongest available lifecycle coverage, reuse, stabilization and actual installed probes.",
+      "dependencies": [
+        "activation"
+      ],
+      "facets": [
+        "capability_change",
+        "full_install",
+        "installed_probe"
+      ]
+    },
+    {
+      "id": "cost",
+      "purpose": "Free-first selection and justified paid exceptions.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "facility_selection",
+        "paid_dependency"
+      ]
+    },
+    {
+      "id": "repository",
+      "purpose": "Provider-neutral scoped discovery, creation, canonical binding and access.",
+      "dependencies": [
+        "workspace",
+        "cost"
+      ],
+      "facets": [
+        "repository_access",
+        "repository_create"
+      ]
+    },
+    {
+      "id": "security",
+      "purpose": "Project-authorized identity, controlled invocation, enrollment and separate access/signing proofs.",
+      "dependencies": [
+        "workspace",
+        "cost"
+      ],
+      "facets": [
+        "identity_sensitive",
+        "credential_change",
+        "sensitive_effect"
+      ]
+    },
+    {
+      "id": "model",
+      "purpose": "Organizational canonical representation, external sources of record and dependency graph.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "organizational_model"
+      ]
+    },
+    {
+      "id": "operations",
+      "purpose": "Project canonical operations, foundational intake and publication.",
+      "dependencies": [
+        "repository",
+        "security",
+        "model"
+      ],
+      "facets": [
+        "canonical_read",
+        "canonical_write",
+        "full_install"
+      ]
+    },
+    {
+      "id": "inventory",
+      "purpose": "Relevant repository inventory and retrieval.",
+      "dependencies": [
+        "operations"
+      ],
+      "facets": [
+        "inventory_change"
+      ]
+    },
+    {
+      "id": "intake",
+      "purpose": "Effective-scope discovery and proportionate clarification.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "request_intake",
+        "scope_uncertainty"
+      ]
+    },
+    {
+      "id": "impact",
+      "purpose": "Effective scope, causal propagation and proportionate new organizational capabilities.",
+      "dependencies": [
+        "model",
+        "intake"
+      ],
+      "facets": [
+        "managed_change",
+        "scope_expansion",
+        "organizational_evolution"
+      ]
+    },
+    {
+      "id": "tickets",
+      "purpose": "Managed work, transition guards, durability, notifications and completion.",
+      "dependencies": [
+        "operations",
+        "impact",
+        "history"
+      ],
+      "facets": [
+        "ticket_mutation",
+        "durable_work",
+        "managed_change"
+      ]
+    },
+    {
+      "id": "changes",
+      "purpose": "Reviewable change sets, authorized desired state, application and verification.",
+      "dependencies": [
+        "tickets"
+      ],
+      "facets": [
+        "change_set",
+        "managed_change"
+      ]
+    },
+    {
+      "id": "execution",
+      "purpose": "Intended, attempted, observed, applied and verified effects; informed recovery/retry.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "material_effect",
+        "verification",
+        "retry",
+        "external_effect"
+      ]
+    },
+    {
+      "id": "migration",
+      "purpose": "Shared organizational transformation, read/write compatibility, ownership and concurrency.",
+      "dependencies": [
+        "operations",
+        "changes",
+        "execution"
+      ],
+      "facets": [
+        "version_sensitive",
+        "organizational_migration",
+        "due_update"
+      ]
+    },
+    {
+      "id": "adoption",
+      "purpose": "Bounded source freshness, independent runtime checkpoints and ordered adoption.",
+      "dependencies": [
+        "capabilities",
+        "migration"
+      ],
+      "facets": [
+        "due_update",
+        "adoption_change",
+        "full_install"
+      ]
+    },
+    {
+      "id": "continuity",
+      "purpose": "Budget signals, reliable <=15% reserve and destination-independent preparation.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "continuity_reserve",
+        "handoff"
+      ]
+    },
+    {
+      "id": "handoff",
+      "purpose": "Portable baseline, access continuity and separately evidenced transfer phases.",
+      "dependencies": [
+        "continuity",
+        "tickets",
+        "repository",
+        "security",
+        "adoption"
+      ],
+      "facets": [
+        "handoff"
+      ]
+    },
+    {
+      "id": "destination",
+      "purpose": "Independent destination intake, resource filtering and source/target firewall.",
+      "dependencies": [
+        "handoff"
+      ],
+      "facets": [
+        "destination_entry"
+      ]
+    },
+    {
+      "id": "secret-transfer",
+      "purpose": "Separate necessary authorized secret transfer; reuse and safe acquisition first.",
+      "dependencies": [
+        "security",
+        "handoff"
+      ],
+      "facets": [
+        "secret_transfer"
+      ]
+    },
+    {
+      "id": "recovery",
+      "purpose": "Resumable activity and verified context reconstruction after interruption.",
+      "dependencies": [
+        "core",
+        "workspace",
+        "context"
+      ],
+      "facets": [
+        "context_loss",
+        "interrupted_setup",
+        "recovery"
+      ]
+    },
+    {
+      "id": "decisions",
+      "purpose": "Durable significant decisions, rationale and related work.",
+      "dependencies": [
+        "operations",
+        "history"
+      ],
+      "facets": [
+        "decision_record"
+      ]
+    },
+    {
+      "id": "human",
+      "purpose": "Actual human-only dependency and automatic verified resumption.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "human_dependency"
+      ]
+    },
+    {
+      "id": "physical",
+      "purpose": "Physical-world responsibilities, constraints and observable completion.",
+      "dependencies": [
+        "impact"
+      ],
+      "facets": [
+        "physical_effect"
+      ]
+    },
+    {
+      "id": "ci",
+      "purpose": "Risk-proportionate consistency checks and semantic compilation.",
+      "dependencies": [
+        "changes",
+        "cost"
+      ],
+      "facets": [
+        "change_set",
+        "semantic_propagation"
+      ]
+    },
+    {
+      "id": "delivery",
+      "purpose": "Controlled application, risk gates, compensation and drift.",
+      "dependencies": [
+        "changes",
+        "execution",
+        "ci",
+        "cost"
+      ],
+      "facets": [
+        "deployment",
+        "external_effect",
+        "compensation",
+        "drift"
+      ]
+    },
+    {
+      "id": "history",
+      "purpose": "Causal, non-fabricated temporal reconstruction with evidence reuse.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "history_query",
+        "material_event"
+      ]
+    },
+    {
+      "id": "interfaces",
+      "purpose": "Tool-independent external projections over canonical English state.",
+      "dependencies": [
+        "model"
+      ],
+      "facets": [
+        "external_interface"
+      ]
+    },
+    {
+      "id": "producer",
+      "purpose": "Maintainer-only release acceptance, regression, traceability and authorized publication.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "oop_maintenance"
+      ]
+    },
+    {
+      "id": "context",
+      "purpose": "Current available action context, selective rehydration and retirement.",
+      "dependencies": [
+        "core"
+      ],
+      "facets": [
+        "context_loss",
+        "route_change",
+        "interaction"
+      ]
+    },
+    {
+      "id": "entry",
+      "purpose": "Conversation and per-message gates plus progressive minimum context.",
+      "dependencies": [
+        "workspace",
+        "context"
+      ],
+      "facets": [
+        "interaction",
+        "information"
+      ]
+    },
+    {
+      "id": "bootstrap",
+      "purpose": "Full BOOT-01–13 procedure, system obligations, scoped attestation and user communication.",
+      "dependencies": [
+        "entry",
+        "activation",
+        "adoption",
+        "operations",
+        "capabilities",
+        "human"
+      ],
+      "facets": [
+        "full_install",
+        "interrupted_setup"
+      ]
+    },
+    {
+      "id": "delegation",
+      "purpose": "Same-contract delegates, owned controls and validated completion.",
+      "dependencies": [
+        "capabilities",
+        "context"
+      ],
+      "facets": [
+        "delegation"
+      ]
+    }
+  ]
+}

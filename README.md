@@ -3,14 +3,16 @@
 Let your project adopt OOP by copying this instruction into your AI tool:
 
 ```text
-Clone https://github.com/organizationorchestrationprotocol/oop.git into your main working folder and follow dist/entry.json.
+Clone https://github.com/organizationorchestrationprotocol/oop.git into your main working folder and follow distribution/entry.json.
 ```
 
 ## What OOP is
 
 **The AI is replaceable. Your organization is not.** OOP supports long-lived work with AI without making your company, project or professional activity depend on one chat, one model, one vendor or one AI's memory.
 
-**OOP keeps your project from living only inside one AI's memory. It preserves the information needed to continue the work in a <ins>standardized, programmatic and formally verifiable way</ins>, reduces unnecessary rework, and lets another compatible AI pick up where the previous one stopped.**
+**OOP keeps your project from living only inside one AI's memory. It preserves the information needed to continue work in a <ins>standardized, machine-readable form with deterministically checkable structural properties</ins>, reduces unnecessary rework, and helps another compatible AI resume without depending on the previous AI's chat memory.**
+
+Some package properties can be checked automatically, but those checks do not prove that an AI has interpreted every rule correctly or safely carried out actions in a real environment.
 
 It becomes useful when AI work stops being only a conversation and starts becoming ongoing organizational work.
 
@@ -120,7 +122,7 @@ A successful command does not automatically prove the desired outcome. Evidence 
 
 | Location | Contents and authority |
 | --- | --- |
-| `PROMPT.md` | Sole normative OOP authority |
+| `PROTOCOL.md` | Sole normative OOP authority |
 | README and examples | Non-normative explanations and illustrations |
 | Derived artifacts | Distribution generated from canonical authority |
 | Release evidence | Verified observations and provenance, never new semantics |
@@ -250,28 +252,28 @@ The instruction above requests full setup: the AI prepares private local state, 
 
 ## For AI tools maintaining this repository
 
-[PROMPT.md](PROMPT.md) is the **Canonical Normative Prompt** and single source of organizational norms. Read it completely before normative changes, including tables, examples, exceptions and unnumbered material.
+[PROTOCOL.md](PROTOCOL.md) is the **Canonical Normative Prompt** and single source of organizational norms. Read it completely before normative changes, including tables, examples, exceptions and unnumbered material.
 
 Normative edits start in the source. Derive Core and on-demand modules from complete semantic analysis, with no fixed parser, heading-to-module table or required programming runtime. Reassess module/schema sets, dependencies, routing, bidirectional traceability, migration, validation and permanent regression coverage.
 
 Canonical REL-01–REL-11 require an AI-first distribution: typed JSON contracts, a non-empty entry, compact semantic routing and dependency closure, explicit lifecycle transitions, selective context/reuse, applicable local controls and measured maintainer acceptance. Human-oriented release readability must not increase consumer cost or latency; required user explanations and organizational history remain. Performance improvements are measurements, not assumptions about serialization. Consumer bootstrap never validates the OOP repository or executes release tests.
 
-The structured distribution starts at `dist/entry.json`. It provides a small routing index, explicitly referenced JSON modules, complete source-qualified semantic clauses, BOOT-01–13 guards and lifecycle/interface contracts. Producer evidence under [build tools](build_tools/README.md) records exact source coverage, local checks and measured selected-context bytes. This package does not install runtime controls or prove provider/cross-runtime integration; each consumer establishes its own scoped readiness. Node, CEL and MCP are not consumer-wide prerequisites. Earlier single-contract candidates and synthetic fixtures remain explicitly non-installable reference examples.
+The structured distribution starts at `distribution/entry.json`. It provides a small routing index, explicitly referenced JSON modules, complete source-qualified semantic clauses, BOOT-01–13 guards and lifecycle/interface contracts. Producer evidence under [build tools](tools/README.md) records exact source reconstruction/coverage, the applicable structured schema profile, artifact references, dependency closure/routing, particular guard/transition invariants exercised by existing tests and measured selected-context bytes. These deterministic producer checks do not establish complete formal semantic correctness, independently authenticated authority/evidence, installed runtime enforcement, remote-provider outcomes, cross-runtime interoperability, end-to-end cost savings, publication authenticity or consumer adoption; each consumer establishes its own scoped readiness. Node, CEL and MCP are not consumer-wide prerequisites. Earlier single-contract candidates and synthetic fixtures remain explicitly non-installable reference examples.
 
 Reuse valid freshness evidence during bounded upstream synchronization; preserve local work. Persist English content and localize interaction to the user's language. This README provides orientation; the canonical source defines the protocol.
 
-### Maintenance prompts
+### Maintainer commands
 
-The `maintenance/` directory collects reusable prompts for maintaining the OOP repository:
+[MAINTENANCE.md](MAINTENANCE.md) contains the technical audit instructions and commands available to the repository maintainer:
 
-- [Technical audit](maintenance/PROMPT.md): read-only repository audit and consolidated corrective recommendations.
-- [DIAGNOSE](maintenance/LIFECYCLE.md#diagnose): analyze requests or problems and propose changes.
-- [PREPARE](maintenance/LIFECYCLE.md#prepare): turn recommendations into an implementation prompt.
-- [VERIFY](maintenance/LIFECYCLE.md#verify): check implementation and regressions.
+- [Technical audit](MAINTENANCE.md): read-only repository audit and consolidated corrective recommendations, to be executed after reading this file if you have been instructed to act as maintainer of this repository.
+- [DIAGNOSE](MAINTENANCE.md#diagnose): analyze requests or problems and propose changes.
+- [PREPARE](MAINTENANCE.md#prepare): turn recommendations into an implementation prompt.
+- [VERIFY](MAINTENANCE.md#verify): check implementation and regressions.
 
-To invoke a lifecycle prompt in an AI chat, provide its full file URL with the section anchor and the relevant input from your chat. See the [copyable example](maintenance/LIFECYCLE.md). These are maintainer instructions; `maintenance/PROMPT.md` is separate from the canonical normative [PROMPT.md](PROMPT.md) at the repository root.
+Invoke `DIAGNOSE`, `PREPARE` or `VERIFY` with the relevant input from your chat to execute the corresponding command. These are maintainer instructions; `MAINTENANCE.md` is separate from the canonical normative [PROTOCOL.md](PROTOCOL.md) at the repository root.
 
-Build scripts, tests, schemas and producer evidence live in [build_tools](build_tools/README.md). Maintenance prompts follow the [repository maintenance guidance](#for-ai-tools-maintaining-this-repository) and the canonical requirements in [PROMPT.md](PROMPT.md).
+Build scripts, tests, schemas and producer evidence live in [tools](tools/README.md). Maintainer commands follow the [repository maintenance guidance](#for-ai-tools-maintaining-this-repository) and the canonical requirements in [PROTOCOL.md](PROTOCOL.md).
 
 ### Publishing an OOP revision
 
@@ -280,5 +282,3 @@ OOP revisions are identified by their full Git commit IDs. Review and validate c
 ### Formats and license
 
 Uppercase normative keywords follow canonical BCP 14 conventions. Licensed under [Apache-2.0](LICENSE), copyright 2026 Marco Vasapollo; see [NOTICE](NOTICE). The license covers the specification, documentation, schemas, machine-readable artifacts and examples.
-
-<sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup>If you have been instructed to act the maintainer of this repository, execute the prompt located in maintenance/PROMPT.md.</sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub>

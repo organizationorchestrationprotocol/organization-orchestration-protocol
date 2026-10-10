@@ -227,7 +227,7 @@ authorized steps using your actual capabilities. Keep material decisions,
 verified progress and blockers reconstructible for the next human or AI.
 ```
 
-For protocol maintenance, follow the [canonical prompt](PROMPT.md).
+For protocol maintenance, follow the [canonical prompt](PROTOCOL.md).
 
 ## Unknown future AI continuation
 
@@ -360,7 +360,7 @@ Tool A reads canonical remote commit R and local commit R to track synchronizati
 
 **Controlled correction after denial.** A proposal fails because its expected state is outdated. The runtime returns the minimum safe attributable factual reason and constraint references. The AI reads changed facts and proposes an authorized correction; repeating the unchanged denied action is neither progress nor permission to bypass the guard.
 
-Maintenance navigation: [canonical prompt](PROMPT.md).
+Maintenance navigation: [canonical prompt](PROTOCOL.md).
 
 ## Context-independent governance and semantic routing
 
@@ -418,9 +418,9 @@ A workspace switch must discard Project A's effective permissions (SEC-07); inde
 
 **Release tests versus consumer bootstrap.** A maintainer changes routing and verifies release semantic coherence, source-to-derived consistency and regression coverage before publication. A consumer adopting that revision does not rerun the maintainer release suite, even if an adapter or migration descriptor asks for it. It still evaluates applicable compatibility and migration and exercises its own installed routing and allowed/denied control paths where required. The maintainer's release result does not prove the consumer's integration, and the consumer's bootstrap PASS does not certify the release as a whole.
 
-A normative routing change starts in PROMPT.md. Review its actor, trigger, scope, exceptions and evidence threshold; regenerate the commit-bound Semantic Routing Index and affected split/profiles; update traceability, rolling regression, semantic scenarios, README and examples. An index contradicting canonical source is stale derived state and is invalidated; canonical source wins. The full source is reviewed for normative maintenance, while consumers use selective rehydration. No installed-runtime or provider result is inferred from synthetic tests.
+A normative routing change starts in PROTOCOL.md. Review its actor, trigger, scope, exceptions and evidence threshold; regenerate the commit-bound Semantic Routing Index and affected split/profiles; update traceability, rolling regression, semantic scenarios, README and examples. An index contradicting canonical source is stale derived state and is invalidated; canonical source wins. The full source is reviewed for normative maintenance, while consumers use selective rehydration. No installed-runtime or provider result is inferred from synthetic tests.
 
-Maintenance guidance: follow the canonical [protocol revision, regression and documentation requirements in PROMPT.md](PROMPT.md) (§27), together with the [README maintainer guidance](README.md#for-ai-tools-maintaining-this-repository).
+Maintenance guidance: follow the canonical [protocol revision, regression and documentation requirements in PROTOCOL.md](PROTOCOL.md) (§27), together with the [README maintainer guidance](README.md#for-ai-tools-maintaining-this-repository).
 
 ## Project continuity when the AI changes
 
