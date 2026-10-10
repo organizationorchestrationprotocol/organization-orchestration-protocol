@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { modules, spans } from './release-plan.mjs';
 import { closure } from './reference-engine.mjs';
 import { validateProfile } from './schema-profile.mjs';
+import { pruneArtifacts } from './prune-artifacts.mjs';
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const hash = value => `sha256:${createHash('sha256').update(value).digest('hex')}`;
 export const source = readFileSync(new URL('../PROMPT.md', import.meta.url), 'utf8').replace(/\r\n/g, '\n');
@@ -36,11 +37,13 @@ closure(modules,modules.map(x=>x.id));
 const commit = spawnSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'});
 const committed = spawnSync('git',['show','HEAD:PROMPT.md'],{cwd:root,encoding:'utf8',maxBuffer:1024*1024});
 if (commit.status || committed.status || committed.stdout.replace(/\r\n/g,'\n')!==source) throw new Error('Canonical source must be committed before ready distribution generation');
+const generatedPaths = [];
 function save(path,data) {
   const target = new URL(`../${path}`,import.meta.url);
   mkdirSync(new URL('./',target),{recursive:true});
   const content = JSON.stringify(data)+'\n';
   if (!existsSync(target) || readFileSync(target,'utf8')!==content) writeFileSync(target,content);
+  generatedPaths.push(path);
   return {path:path.replace(/^dist\//,''),content_identity:hash(content)};
 }
 const indexModules = modules.map(module => {
@@ -173,4 +176,6 @@ save('build_tools/evidence/release-traceability.json',{
     existing_state_policy:'Preserve valid organizational history and independently owned checkpoints; canonical migration/adoption rules govern any actual semantic difference.',
     recovery:'Retain prior verified adoption and actual partial effects; repair owned derived references before dependent claims.'},
 });
+const removed = pruneArtifacts(root, generatedPaths);
+process.stdout.write(`Removed ${removed.length} orphan module/detail artifacts${removed.length ? ': '+removed.join(', ') : ''}.\n`);
 process.stdout.write(`Generated ${modules.length} modules, ${contracts.length} lossless contracts and BOOT-01–13; producer acceptance still required.\n`);

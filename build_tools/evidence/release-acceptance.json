@@ -1,8 +1,31 @@
 {
-  "observed_at": "2026-10-10T17:25:15.798Z",
+  "observed_at": "2026-10-10T19:35:04.550Z",
   "node_version": "v23.11.0",
   "source_identity": "sha256:8b05b2f38f8d51a9a4bf6abfff6f48799a4b2628e1b92592907f36fdeea74881",
-  "source_snapshot_commit": "8de5d1fb6efb865710c7750b65cff2a744a4c239",
+  "source_snapshot_commit": "39d0c6141701d38121944db109e0f1b851dd9511",
+  "evaluated_checkout": {
+    "commit": "39d0c6141701d38121944db109e0f1b851dd9511",
+    "ref": "main",
+    "working_tree": "modified",
+    "changes": [
+      " M .gitignore",
+      " M CHANGELOG.md",
+      " M build_tools/README.md",
+      " M build_tools/accept-release.mjs",
+      " M build_tools/evidence/release-acceptance.json",
+      " M build_tools/evidence/release-tests.tap",
+      " M build_tools/evidence/release-traceability.json",
+      " M build_tools/generate-release.mjs",
+      " M dist/entry.json",
+      " M dist/routing.json",
+      " M maintenance/PROMPT.md",
+      "?? build_tools/prune-artifacts.mjs",
+      "?? build_tools/prune-artifacts.test.mjs"
+    ]
+  },
+  "subject_content_identity": "sha256:faba1f0b09412bd9f2af2e0e45e9c2fd373ac4e6ba09acd61e4dcc5107fba0c6",
+  "report_kind": "committed_acceptance_snapshot",
+  "revision_binding": "evaluated_checkout identifies HEAD at execution; identities bind the actual files including any working-tree changes. source_snapshot_commit identifies generator provenance only. A committed report cannot embed its own containing commit; rerun acceptance after commit and use --check-current for current HEAD.",
   "scope": "producer-prepared technology-neutral derived distribution; no installed-runtime/provider/cross-runtime readiness claim",
   "release_ready": true,
   "publication": "not_performed_for_generated_package",
@@ -12,16 +35,20 @@
     "preceding_source_checkpoint": "passed",
     "local_package_and_reference_tests": "passed",
     "measured_context_bytes": "passed",
-    "frozen_subject": "passed"
+    "frozen_subject": "passed",
+    "frozen_checkout": "passed"
   },
   "identities": {
-    "CHANGELOG.md": "sha256:25093d1aa55c336371630ffb1393e7ae9525e98e5fbf8173831d40c78cdf77ab",
+    ".gitignore": "sha256:9020fe4ab4607c35bec29145bf94d6e6dbc28ad184e0baf5f5c0023b6cf1512e",
+    "CHANGELOG.md": "sha256:cd5a38ce854bc87e301ef6263d4ad5885c5c7ef515b073d6af1323059309700e",
     "PROMPT.md": "sha256:25ede22c43f81c7292b6a9bd161d76a8198a27f35e75dd993601feadb7b7abcf",
-    "README.md": "sha256:3fba1ad894cdce205951b69b069bba6e3df9c61e6d380864383908435035e7d3",
-    "build_tools/README.md": "sha256:9d7cc57f212331446f2a29675fbfe06aa1d1e760cd428ea607a744f9de72c723",
-    "build_tools/accept-release.mjs": "sha256:05cf842e3971d28e0bef1cdfcf29f605cbdfaf2c22221fec33e6f16666840a62",
-    "build_tools/evidence/release-traceability.json": "sha256:12d3dd242e5c050b01f50075072cd3e1b8a196339b49ca9d95ce68e7fdbd6d49",
-    "build_tools/generate-release.mjs": "sha256:798b6bbb2d5bac15e6eb28e85fc17af0de2c14d551abd2986537169271a4e0c8",
+    "README.md": "sha256:d775dfb89c560c23c75d6efda0782ca599e6bd923e517d7077b36b0f60d7aed0",
+    "build_tools/README.md": "sha256:92505c18d732688bfcab6bf12f1c5bcdef2ecc851358642957977caa3d5608d1",
+    "build_tools/accept-release.mjs": "sha256:04f8d30758758c4abb496601dc73eafe3a2c9f54e4fbd0eba4310eefa203be01",
+    "build_tools/evidence/release-traceability.json": "sha256:9074751511441c4280f02f8ecc192a847eb979693203c24117da70991db41c00",
+    "build_tools/generate-release.mjs": "sha256:e9adbd196a48260fea16e4b480313ccf567a4e86ff4008177bfa9da92060ccb5",
+    "build_tools/prune-artifacts.mjs": "sha256:37b6ece1e081d9e9293c854bcdeb9b344857c43b8f7d6d5e64fc53a5c083bcbe",
+    "build_tools/prune-artifacts.test.mjs": "sha256:d8393258cf3a09f7b8b1ab7c276523890937df282d44386739c60dfd5e348c81",
     "build_tools/reference-engine.mjs": "sha256:7bfaa9f49632604e36cdca916c8e0403e715fa47d417013235820946f4c66e8c",
     "build_tools/reference-engine.test.mjs": "sha256:3b81bf1c7e9b0854dbb615f7e4e2a3d17bcf66c234f8cd54f0dedb0c069ca170",
     "build_tools/release-engine.mjs": "sha256:806736d23fc938046ef654e319dc2fef487dd60b4ad19b730b0f7269bb3ece2b",
@@ -65,7 +92,7 @@
     "dist/details/shared-context.json": "sha256:e8821cc3ad407dd2665872a0325b5a58d3e86f2e1a59d3b9dffaac93e46c444b",
     "dist/details/tickets.json": "sha256:181a6c495c51a8bb4c13ad0e0e18b88f34db5af3cb4a5e190c007b9f3c28d41a",
     "dist/details/workspace.json": "sha256:206e5858d09e129f88173cce5c1b17d479fdf0ff68d4a90ca32a5ab1abd64467",
-    "dist/entry.json": "sha256:ec69d5f239f22f9bf80e1d10b3b245b66423e85dde7bee1557983d2cf48402d2",
+    "dist/entry.json": "sha256:c2eb9940ca19717f574363a511b546b3283112144be24298da43fddbf460b481",
     "dist/interfaces.json": "sha256:7f34ee4f9887c610a4ca96bf7e70852b5f905284cc8c7a2d68ff3dfafcf269d6",
     "dist/modules/activation.json": "sha256:71d0b034ad42499fb86c5e0e268f0218e986f0d90c310bbf1b63d13f4893f433",
     "dist/modules/adoption.json": "sha256:747727ef4bd881e601e4b635fda72528153ffa2e6e58837f8373a2ebed549641",
@@ -104,8 +131,10 @@
     "dist/modules/workspace.json": "sha256:d6192480e2109ccc06f69fe6ebc6ae48f151c0ac0a048d6ca3b590fee5e69747",
     "dist/procedures/bootstrap.json": "sha256:3ba5048f14733827c41f624a63de8ac0c55cb511ac210e017aec8a26a2d581d3",
     "dist/procedures/lifecycle.json": "sha256:1ecc49e0ca7b7ad70fff3ee9f29aed46d510e5872a0e9d62f9791f8bdc4743f9",
-    "dist/routing.json": "sha256:4b9587578502a9c73d45de2b933e5b7d364843c320378ba6dc91dda11d0c1b19",
-    "examples.md": "sha256:5ef7cb5d84d782361bbd427d26892cbf199a59868d0ebf496b7d88cb641b9554"
+    "dist/routing.json": "sha256:98b3bd211ecf9e5b0bc9c12cff8dd55929cba7451f4bd84d127ce968e8c37a21",
+    "examples.md": "sha256:5ef7cb5d84d782361bbd427d26892cbf199a59868d0ebf496b7d88cb641b9554",
+    "maintenance/LIFECYCLE.md": "sha256:dce79240de138b51434b05e4c080f1cd0752e731d457011673a18724f28288a9",
+    "maintenance/PROMPT.md": "sha256:b8c994813430046198ec422a3a66440c041f0c1b41781328addacab6d1da5e90"
   },
   "semantic_review": {
     "result": "reasoned_complete_allocation_with_verbatim_source_preservation",
@@ -116,8 +145,8 @@
     "commit": "8de5d1fb6efb865710c7750b65cff2a744a4c239",
     "source_identity": "sha256:8b05b2f38f8d51a9a4bf6abfff6f48799a4b2628e1b92592907f36fdeea74881",
     "package_checkpoint": {
-      "commit": "f6ea716f47eafd6f54968478a3661f1e5650e7cf",
-      "content_identity": "sha256:011de438424a96d67dc5f47e531dcaae577946e9ab0a7b32652ba1b3d89548d6"
+      "commit": "8f04d6e33510d948601528b8a1238c2d6a263d62",
+      "content_identity": "sha256:03ce3daec13c21bf772339a98ec06ad67f29d5a3ab4f00db58b0ebdcbe9b0482"
     },
     "provenance": "Latest committed accepted producer-package report",
     "verified_scope": "producer-prepared technology-neutral derived distribution; no installed-runtime/provider/cross-runtime readiness claim",
@@ -128,6 +157,34 @@
     "limits": "No historical full release/integration verification is invented. These results establish current export preservation and local mechanisms only."
   },
   "observations": [
+    {
+      "id": "REL-TOOL-001",
+      "checked": "removed or renamed modules lose both old generated artifacts",
+      "expected": "isolated local assertion passes, including applicable designed negative controls",
+      "actual": "passed",
+      "tier": "producer_artifact_cleanup"
+    },
+    {
+      "id": "REL-TOOL-002",
+      "checked": "cleanup preserves files outside the generated JSON boundary",
+      "expected": "isolated local assertion passes, including applicable designed negative controls",
+      "actual": "passed",
+      "tier": "producer_artifact_cleanup"
+    },
+    {
+      "id": "REL-TOOL-003",
+      "checked": "incomplete generation prevents all orphan deletion",
+      "expected": "isolated local assertion passes, including applicable designed negative controls",
+      "actual": "passed",
+      "tier": "producer_artifact_cleanup"
+    },
+    {
+      "id": "REL-TOOL-004",
+      "checked": "unsafe inventory and empty allocation fail before deletion",
+      "expected": "isolated local assertion passes, including applicable designed negative controls",
+      "actual": "passed",
+      "tier": "producer_artifact_cleanup"
+    },
     {
       "id": "REL-OBS-001",
       "checked": "deterministic closure retains dependency order",
@@ -549,7 +606,7 @@
       "module_file_reads": 21,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 22208,
-      "local_selection_read_assembly_ms": 3.716099999999983,
+      "local_selection_read_assembly_ms": 4.11220000000003,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -574,7 +631,7 @@
       "module_file_reads": 0,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 0,
-      "local_selection_read_assembly_ms": 0.06080000000002883,
+      "local_selection_read_assembly_ms": 0.07770000000004984,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -599,7 +656,7 @@
       "module_file_reads": 4,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 0,
-      "local_selection_read_assembly_ms": 0.813699999999983,
+      "local_selection_read_assembly_ms": 0.9089000000000169,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -634,7 +691,7 @@
       "module_file_reads": 14,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 0,
-      "local_selection_read_assembly_ms": 2.1433999999999855,
+      "local_selection_read_assembly_ms": 2.2357000000000653,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -674,7 +731,7 @@
       "module_file_reads": 15,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 1491,
-      "local_selection_read_assembly_ms": 2.2660000000000196,
+      "local_selection_read_assembly_ms": 2.9162999999999784,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -700,7 +757,7 @@
       "module_file_reads": 5,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 1491,
-      "local_selection_read_assembly_ms": 0.9737999999999829,
+      "local_selection_read_assembly_ms": 1.042100000000005,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -743,7 +800,7 @@
       "module_file_reads": 22,
       "entry_selector_bytes": 14735,
       "procedure_bytes": 22208,
-      "local_selection_read_assembly_ms": 3.1415000000000077,
+      "local_selection_read_assembly_ms": 3.5065000000000737,
       "tokenizer_tokens": "not_measured",
       "actual_model_calls": "not_measured",
       "provider_actions": "not_performed",
@@ -1084,7 +1141,7 @@
     "examples": "affected: actual package and limits",
     "maintainer_guidance": "affected: reusable reviewed generation and producer acceptance",
     "schemas": "existing contract profile applied to all source contracts",
-    "tests": "25 new package checks retain 30 historical observations",
+    "tests": "25 package checks, 30 retained reference observations and four producer cleanup regressions",
     "generated_artifacts": "complete current-source export with explicit semantic bindings",
     "release_evidence": "current exact subjects, scope-bound verdict and seven measured local scenarios"
   },

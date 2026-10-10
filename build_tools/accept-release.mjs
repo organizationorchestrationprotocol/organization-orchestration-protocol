@@ -9,6 +9,31 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const hash=x=>`sha256:${createHash('sha256').update(x).digest('hex')}`;
 const text=path=>readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
 const json=path=>JSON.parse(text(path));
+const git = args => spawnSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
+const outputMode=process.argv.slice(2);
+if(outputMode.some(arg=>!['--snapshot','--check-current'].includes(arg)) || outputMode.length>1) throw new Error('Use --snapshot, --check-current, or no arguments');
+const snapshot=outputMode.includes('--snapshot');
+const reportPath=snapshot?'release-acceptance.json':'current-acceptance.json';
+const tapPath=snapshot?'release-tests.tap':'current-tests.tap';
+function checkout() {
+  const commit=git(['rev-parse','HEAD']);
+  const ref=git(['symbolic-ref','--quiet','--short','HEAD']);
+  const status=git(['status','--porcelain','--untracked-files=all']);
+  if(commit.status!==0 || status.status!==0) throw new Error('Cannot identify evaluated Git checkout');
+  return {commit:commit.stdout.trim(),ref:ref.status===0?ref.stdout.trim():'detached',
+    working_tree:status.stdout.trim()?'modified':'clean',changes:status.stdout.trimEnd().split('\n').filter(Boolean)};
+}
+if(outputMode.includes('--check-current')) {
+  const report=json('build_tools/evidence/current-acceptance.json');
+  const current=checkout();
+  if(report.evaluated_checkout?.commit!==current.commit || report.release_ready!==true ||
+      JSON.stringify(report.identities)!==JSON.stringify(identify(subjects()))) {
+    throw new Error('Current acceptance is stale or failed: rerun node build_tools/accept-release.mjs');
+  }
+  process.stdout.write(`Current acceptance matches HEAD ${current.commit} and all evaluated subject files.\n`);
+  process.exit(0);
+}
+const evaluatedCheckout=checkout();
 const source=text('PROMPT.md').replace(/\r\n/g,'\n');
 const trace=json('build_tools/evidence/release-traceability.json');
 function subjects(){return files('dist').filter(x=>x.endsWith('.json')).concat([
@@ -17,10 +42,11 @@ function subjects(){return files('dist').filter(x=>x.endsWith('.json')).concat([
   'build_tools/reference-engine.mjs','build_tools/reference-engine.test.mjs','build_tools/schema-profile.mjs',
   'build_tools/schemas/contract.schema.json','build_tools/evidence/release-traceability.json',
   'README.md','examples.md','CHANGELOG.md','build_tools/README.md',
+  '.gitignore','maintenance/PROMPT.md','maintenance/LIFECYCLE.md',
+  'build_tools/prune-artifacts.mjs','build_tools/prune-artifacts.test.mjs',
 ]).sort();}
-const identify=paths=>Object.fromEntries(paths.map(path=>[path,hash(readFileSync(new URL(`../${path}`,import.meta.url)))]));
+function identify(paths){return Object.fromEntries(paths.map(path=>[path,hash(readFileSync(new URL(`../${path}`,import.meta.url)))]));}
 const frozenIdentities=identify(subjects());
-const git = args => spawnSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
 // Find the latest committed accepted package, never silently choose an older one.
 const acceptancePaths=['build_tools/evidence/release-acceptance.json','maintainer/evidence/release-acceptance.json'];
 const history=git(['log','--format=%H','--',...acceptancePaths]);
@@ -37,13 +63,13 @@ for(const recordCommit of history.stdout.trim().split('\n').filter(Boolean)){
 }
 const initialBaseline='8de5d1fb6efb865710c7750b65cff2a744a4c239';
 const baselineCommit=packageBaseline?.report.source_snapshot_commit??initialBaseline;
-const run=spawnSync(process.execPath,['--test','--test-reporter=tap','build_tools/reference-engine.test.mjs','build_tools/release.test.mjs'],
+const run=spawnSync(process.execPath,['--test','--test-reporter=tap','build_tools/reference-engine.test.mjs','build_tools/release.test.mjs','build_tools/prune-artifacts.test.mjs'],
   {cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
-const observations=[...run.stdout.matchAll(/^ok \d+ - ((?:REL-OBS|REL-PKG)-\d+): (.+)$/gm)].map(match=>({
+const observations=[...run.stdout.matchAll(/^ok \d+ - ((?:REL-OBS|REL-PKG|REL-TOOL)-\d+): (.+)$/gm)].map(match=>({
   id:match[1],checked:match[2],expected:'isolated local assertion passes, including applicable designed negative controls',actual:'passed',
-  tier:match[1].startsWith('REL-PKG')?'real_package_local_read_and_supplied_fact_model':'isolated_reference_fixture',
+  tier:match[1].startsWith('REL-PKG')?'real_package_local_read_and_supplied_fact_model':match[1].startsWith('REL-TOOL')?'producer_artifact_cleanup':'isolated_reference_fixture',
 }));
-const testPassed=run.status===0 && observations.length===55 && /^# fail 0$/m.test(run.stdout);
+const testPassed=run.status===0 && observations.length===59 && new Set(observations.map(x=>x.id)).size===59 && /^# fail 0$/m.test(run.stdout);
 const previous=git(['show',`${baselineCommit}:PROMPT.md`]);
 const priorSourceEqual=previous.status===0&&previous.stdout.replace(/\r\n/g,'\n')===source;
 // This fixed checkpoint predates the directory rename.
@@ -91,11 +117,15 @@ const subjectUnchanged=JSON.stringify(identities)===JSON.stringify(frozenIdentit
 const noByteRegression=measurements.every(x=>x.selected_governing_bytes<=x.baseline_governing_bytes);
 const checks={source_preservation:priorSourceEqual?'passed':'failed',preceding_source_checkpoint:baselineIdentified?'passed':'failed',
   local_package_and_reference_tests:testPassed?'passed':'failed',measured_context_bytes:noByteRegression?'passed':'failed',
-  frozen_subject:subjectUnchanged?'passed':'failed'};
+  frozen_subject:subjectUnchanged?'passed':'failed',frozen_checkout:JSON.stringify(checkout())===JSON.stringify(evaluatedCheckout)?'passed':'failed'};
 const accepted=Object.values(checks).every(x=>x==='passed');
 const report={
   observed_at:new Date().toISOString(),node_version:process.version,
   source_identity:hash(source),source_snapshot_commit:trace.source_snapshot_commit,
+  evaluated_checkout:evaluatedCheckout,
+  subject_content_identity:hash(JSON.stringify(identities)),
+  report_kind:snapshot?'committed_acceptance_snapshot':'current_checkout_acceptance',
+  revision_binding:'evaluated_checkout identifies HEAD at execution; identities bind the actual files including any working-tree changes. source_snapshot_commit identifies generator provenance only. A committed report cannot embed its own containing commit; rerun acceptance after commit and use --check-current for current HEAD.',
   scope:'producer-prepared technology-neutral derived distribution; no installed-runtime/provider/cross-runtime readiness claim',
   release_ready:accepted,publication:'not_performed_for_generated_package',runtime_adoption:'not_performed',checks,identities,
   semantic_review:{result:'reasoned_complete_allocation_with_verbatim_source_preservation',reference:'build_tools/release-review.json',
@@ -112,14 +142,14 @@ const report={
   retained_requirements:trace.clauses.map(x=>({id:x.contract,disposition:'preserved_verbatim',source_identity:x.content_identity,artifact:x.artifact})),
   impact:{README:'affected: official structured entry after local package acceptance',examples:'affected: actual package and limits',
     maintainer_guidance:'affected: reusable reviewed generation and producer acceptance',schemas:'existing contract profile applied to all source contracts',
-    tests:'25 new package checks retain 30 historical observations',generated_artifacts:'complete current-source export with explicit semantic bindings',
+    tests:'25 package checks, 30 retained reference observations and four producer cleanup regressions',generated_artifacts:'complete current-source export with explicit semantic bindings',
     release_evidence:'current exact subjects, scope-bound verdict and seven measured local scenarios'},
   limitations:{installed_runtime:'not_performed: no native adapter is shipped or claimed installed',provider_execution:'not_performed: no credentials or provider effects used',
     cross_runtime:'not_performed: technology neutrality reviewed, real product interoperability not claimed',
     general_json_schema:'not_claimed: only declared restricted profile validated',token_or_money_savings:'not_claimed',
     formal_semantic_judgment:'not_claimed: source-qualified semantic conditions remain complete clauses'},
 };
-writeFileSync(new URL('./evidence/release-tests.tap',import.meta.url),run.stdout);
-writeFileSync(new URL('./evidence/release-acceptance.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
+writeFileSync(new URL(`./evidence/${tapPath}`,import.meta.url),run.stdout);
+writeFileSync(new URL(`./evidence/${reportPath}`,import.meta.url),JSON.stringify(report,null,2)+'\n');
 if(!accepted){process.stderr.write(JSON.stringify(checks)+'\n'+run.stderr);process.exitCode=1;}
 else process.stdout.write(`Producer package accepted: ${observations.length} local observations, seven real-package scenarios; consumer integration and publication not claimed.\n`);

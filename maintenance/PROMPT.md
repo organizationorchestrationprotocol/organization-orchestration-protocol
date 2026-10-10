@@ -285,6 +285,8 @@ The verdict applies to **the declared scope**: for example, `producer package`, 
 
 Write in a **practical, concise, evidence-based manner, with comprehensive check coverage**. Use exactly these sections:
 
+**Mandatory output requirement:** You MUST include the final **Proposed Changes** section defined below. The audit response is incomplete without it. You MUST NOT omit it, replace it with a table or a reference to another section, or defer it to a later response. Concision and cost reduction MUST NOT remove required suggestions or fields. Translate the section title and field labels into the user's preferred language when responding.
+
 ### Verdict
 
 One of the three decisions, **scope**, ref/full commit, concise result, and rationale. If repository visibility or access limits the verdict, say so immediately.
@@ -325,16 +327,26 @@ Confirm **once** the selected verdict, its scope, and the **objective conditions
 
 ### Proposed Changes
 
-End the audit report with a **bulleted list of all proposed fixes and improvements** arising from the analysis, including the errors, defects, and improvement opportunities identified. Consolidate overlapping suggestions and reference their finding IDs and priority/disposition so this list remains consistent with the findings and the single corrective package.
+You MUST end the audit report with a **bulleted list of all proposed fixes and improvements** arising from the analysis, including the errors, defects, and improvement opportunities identified. Include mandatory fixes AND justified improvements that are safe to defer; a lack of P0/P1 findings does not permit omission of other proposed changes. Consolidate overlapping suggestions and reference their finding IDs and priority/disposition so this list remains consistent with the findings and the single corrective package. Every proposed change elsewhere in the report MUST appear in this list or be explicitly mapped to a consolidated item.
 
-For each bullet, provide:
+Each suggestion MUST be a separate top-level bullet containing ALL FOUR of the following explicitly labeled fields. A suggestion missing any field is incomplete:
 
 - **Audience and artifact:** identify whether the proposed change concerns human-facing documentation, maintainer documentation, AI runtime instructions/contracts, or documentation for users of the runtime. Include all applicable categories; for changes to code, tests, or evidence, name the artifact and its intended audience explicitly.
 - **Proposed change:** a brief, concise, complete description of what you would change and why, identifying the affected files or sections.
 - **Strengths and weaknesses:** briefly explain the expected benefits and the relevant drawbacks, costs, limitations, or tradeoffs. Distinguish measured outcomes from expectations.
 - **Practical examples:** provide concise, concrete examples showing how the proposed change would affect an actual maintenance task, runtime behavior, or user interaction.
 
-Keep each suggestion easy to evaluate without rereading the full report. Use plain language, preserve the established project constraints, and do not introduce unsupported recommendations merely to populate the list. If no changes are justified, state that explicitly rather than inventing suggestions.
+Use this structure for EVERY suggestion, filling in the actual content rather than reproducing placeholders:
+
+- **[Finding ID(s), priority/disposition] Suggestion title**
+  - **Audience and artifact:** applicable audience categories and affected files or sections.
+  - **Proposed change:** what you would change and why.
+  - **Strengths and weaknesses:** expected benefits AND drawbacks, costs, limitations, or tradeoffs; explicitly state when none are identified within the assessed scope.
+  - **Practical examples:** at least one concrete example showing the current problem and the expected behavior or wording after the change. Label illustrative scenarios as examples, not executed tests.
+
+Keep each suggestion easy to evaluate without rereading the full report. Use plain language and concise but complete descriptions. Preserve the established project constraints and do not introduce unsupported recommendations merely to populate the list. If no changes are justified, you MUST still include this section with a bullet stating that no changes are proposed and explaining the verified scope and relevant limitations; do not invent suggestions or claim an absolute absence of defects.
+
+**Final response completeness check:** Before sending the report, you MUST check that this final section is present, every proposed change is accounted for, and every suggestion includes all four labeled fields and at least one practical example. If any check fails, complete the missing content BEFORE sending the response. You MUST NOT present the audit report as complete or ask the user to request the missing list separately. Any required commit/push status statement may follow this section.
 
 ## 9. Concluding Rule
 
