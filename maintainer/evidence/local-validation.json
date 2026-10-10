@@ -1,0 +1,207 @@
+{
+  "observed_at": "2026-10-10T11:28:03.820Z",
+  "node_version": "v23.11.0",
+  "evidence_tier": "local_executable_fixture_and_restricted_schema_profile",
+  "identities": {
+    "../PROMPT.md": "sha256:25ede22c43f81c7292b6a9bd161d76a8198a27f35e75dd993601feadb7b7abcf",
+    "./reference-engine.mjs": "sha256:7bfaa9f49632604e36cdca916c8e0403e715fa47d417013235820946f4c66e8c",
+    "./reference-engine.test.mjs": "sha256:3b81bf1c7e9b0854dbb615f7e4e2a3d17bcf66c234f8cd54f0dedb0c069ca170",
+    "./schema-profile.mjs": "sha256:2b36de6fa21c01c0c48eeb47d5e794e24d818b9a3f2e3bfbec439c28726182a7",
+    "./schemas/contract.schema.json": "sha256:515b260a2b62e23213df0c1922e330b4ddec83acb1b004bba75fb7e15c55b698",
+    "./candidate/entry.json": "sha256:362a653d664c3531b7c7cafc2057de5cf0baff2a4e2056038661592d23e7eecf",
+    "./candidate/operations-access.json": "sha256:e2cfb62cecd1ed6566c0fee356e28fdadcac0d9c37a041aa7533fd57927f6b07"
+  },
+  "observations": [
+    {
+      "id": "REL-OBS-001",
+      "checked": "deterministic closure retains dependency order",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-002",
+      "checked": "unresolved identities and missing dependencies fail",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-003",
+      "checked": "cycles and duplicate module identities fail",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-004",
+      "checked": "action, state, risk, authority and recovery routes join request",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-005",
+      "checked": "known informational route stays small",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-006",
+      "checked": "unknown material classification expands and stays unresolved",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-007",
+      "checked": "unknown selectors and malformed facets fail",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-008",
+      "checked": "context assembly is deterministic and deduplicates identities",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-009",
+      "checked": "conflicting governing content is rejected",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-010",
+      "checked": "guard truth, falsehood and uncertainty remain distinct",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-011",
+      "checked": "malformed or empty guards are rejected",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-012",
+      "checked": "user confirmation cannot skip actual access observation",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-013",
+      "checked": "readiness transition needs all applicable facts",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-014",
+      "checked": "recovery requires a fresh observation, not old success",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-015",
+      "checked": "undefined and ambiguous transitions fail",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-016",
+      "checked": "invalidation follows only transitive dependent evidence",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-017",
+      "checked": "reuse cannot cross project, runtime or changed dependencies",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-018",
+      "checked": "stale and unobserved checkpoints cannot establish reuse",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-019",
+      "checked": "access is tied to the expected runtime credential and adapter",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-020",
+      "checked": "read-only or anonymous success cannot prove read/write readiness",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-021",
+      "checked": "private visibility is not an access readiness predicate",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-022",
+      "checked": "successful final check cannot conceal an earlier failure",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-023",
+      "checked": "candidates, missing coverage and unperformed checks block readiness",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-024",
+      "checked": "measured efficiency regression requires a justified authorized disposition",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-025",
+      "checked": "candidate catalog never advertises complete production coverage",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-026",
+      "checked": "producer profile validates the access contract and rejects omissions",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-027",
+      "checked": "profile refuses unsupported schema features instead of silently passing",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-028",
+      "checked": "candidate entry cannot be selected as an installable release",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-029",
+      "checked": "inherited values cannot establish observed guard facts",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    },
+    {
+      "id": "REL-OBS-030",
+      "checked": "malformed module metadata and duplicate states are rejected",
+      "expected": "passes positive/negative/unknown isolated fixture assertions",
+      "actual": "passed"
+    }
+  ],
+  "source_preservation_check": {
+    "expected": "unrelated canonical text retained",
+    "actual": "passed"
+  },
+  "restricted_candidate_schema": "passed",
+  "general_json_schema_conformance": "not_claimed",
+  "complete_semantic_review_and_export": "not_verified",
+  "provider_execution": "not_performed",
+  "installed_runtime_paths": "not_performed",
+  "cross_runtime_execution": "not_performed",
+  "release_ready": false
+}

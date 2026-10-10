@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: REL-OBS-001: deterministic closure retains dependency order
+ok 1 - REL-OBS-001: deterministic closure retains dependency order
+  ---
+  duration_ms: 1.4197
+  type: 'test'
+  ...
+# Subtest: REL-OBS-002: unresolved identities and missing dependencies fail
+ok 2 - REL-OBS-002: unresolved identities and missing dependencies fail
+  ---
+  duration_ms: 0.325
+  type: 'test'
+  ...
+# Subtest: REL-OBS-003: cycles and duplicate module identities fail
+ok 3 - REL-OBS-003: cycles and duplicate module identities fail
+  ---
+  duration_ms: 0.1356
+  type: 'test'
+  ...
+# Subtest: REL-OBS-004: action, state, risk, authority and recovery routes join request
+ok 4 - REL-OBS-004: action, state, risk, authority and recovery routes join request
+  ---
+  duration_ms: 0.5107
+  type: 'test'
+  ...
+# Subtest: REL-OBS-005: known informational route stays small
+ok 5 - REL-OBS-005: known informational route stays small
+  ---
+  duration_ms: 0.17
+  type: 'test'
+  ...
+# Subtest: REL-OBS-006: unknown material classification expands and stays unresolved
+ok 6 - REL-OBS-006: unknown material classification expands and stays unresolved
+  ---
+  duration_ms: 0.0971
+  type: 'test'
+  ...
+# Subtest: REL-OBS-007: unknown selectors and malformed facets fail
+ok 7 - REL-OBS-007: unknown selectors and malformed facets fail
+  ---
+  duration_ms: 0.1965
+  type: 'test'
+  ...
+# Subtest: REL-OBS-008: context assembly is deterministic and deduplicates identities
+ok 8 - REL-OBS-008: context assembly is deterministic and deduplicates identities
+  ---
+  duration_ms: 8.0654
+  type: 'test'
+  ...
+# Subtest: REL-OBS-009: conflicting governing content is rejected
+ok 9 - REL-OBS-009: conflicting governing content is rejected
+  ---
+  duration_ms: 0.4605
+  type: 'test'
+  ...
+# Subtest: REL-OBS-010: guard truth, falsehood and uncertainty remain distinct
+ok 10 - REL-OBS-010: guard truth, falsehood and uncertainty remain distinct
+  ---
+  duration_ms: 0.3897
+  type: 'test'
+  ...
+# Subtest: REL-OBS-011: malformed or empty guards are rejected
+ok 11 - REL-OBS-011: malformed or empty guards are rejected
+  ---
+  duration_ms: 0.2417
+  type: 'test'
+  ...
+# Subtest: REL-OBS-012: user confirmation cannot skip actual access observation
+ok 12 - REL-OBS-012: user confirmation cannot skip actual access observation
+  ---
+  duration_ms: 0.2024
+  type: 'test'
+  ...
+# Subtest: REL-OBS-013: readiness transition needs all applicable facts
+ok 13 - REL-OBS-013: readiness transition needs all applicable facts
+  ---
+  duration_ms: 0.2456
+  type: 'test'
+  ...
+# Subtest: REL-OBS-014: recovery requires a fresh observation, not old success
+ok 14 - REL-OBS-014: recovery requires a fresh observation, not old success
+  ---
+  duration_ms: 0.0921
+  type: 'test'
+  ...
+# Subtest: REL-OBS-015: undefined and ambiguous transitions fail
+ok 15 - REL-OBS-015: undefined and ambiguous transitions fail
+  ---
+  duration_ms: 0.1169
+  type: 'test'
+  ...
+# Subtest: REL-OBS-016: invalidation follows only transitive dependent evidence
+ok 16 - REL-OBS-016: invalidation follows only transitive dependent evidence
+  ---
+  duration_ms: 0.2174
+  type: 'test'
+  ...
+# Subtest: REL-OBS-017: reuse cannot cross project, runtime or changed dependencies
+ok 17 - REL-OBS-017: reuse cannot cross project, runtime or changed dependencies
+  ---
+  duration_ms: 0.15
+  type: 'test'
+  ...
+# Subtest: REL-OBS-018: stale and unobserved checkpoints cannot establish reuse
+ok 18 - REL-OBS-018: stale and unobserved checkpoints cannot establish reuse
+  ---
+  duration_ms: 0.0636
+  type: 'test'
+  ...
+# Subtest: REL-OBS-019: access is tied to the expected runtime credential and adapter
+ok 19 - REL-OBS-019: access is tied to the expected runtime credential and adapter
+  ---
+  duration_ms: 0.1338
+  type: 'test'
+  ...
+# Subtest: REL-OBS-020: read-only or anonymous success cannot prove read/write readiness
+ok 20 - REL-OBS-020: read-only or anonymous success cannot prove read/write readiness
+  ---
+  duration_ms: 0.0618
+  type: 'test'
+  ...
+# Subtest: REL-OBS-021: private visibility is not an access readiness predicate
+ok 21 - REL-OBS-021: private visibility is not an access readiness predicate
+  ---
+  duration_ms: 0.0494
+  type: 'test'
+  ...
+# Subtest: REL-OBS-022: successful final check cannot conceal an earlier failure
+ok 22 - REL-OBS-022: successful final check cannot conceal an earlier failure
+  ---
+  duration_ms: 0.1018
+  type: 'test'
+  ...
+# Subtest: REL-OBS-023: candidates, missing coverage and unperformed checks block readiness
+ok 23 - REL-OBS-023: candidates, missing coverage and unperformed checks block readiness
+  ---
+  duration_ms: 0.0658
+  type: 'test'
+  ...
+# Subtest: REL-OBS-024: measured efficiency regression requires a justified authorized disposition
+ok 24 - REL-OBS-024: measured efficiency regression requires a justified authorized disposition
+  ---
+  duration_ms: 0.05
+  type: 'test'
+  ...
+# Subtest: REL-OBS-025: candidate catalog never advertises complete production coverage
+ok 25 - REL-OBS-025: candidate catalog never advertises complete production coverage
+  ---
+  duration_ms: 0.042
+  type: 'test'
+  ...
+# Subtest: REL-OBS-026: producer profile validates the access contract and rejects omissions
+ok 26 - REL-OBS-026: producer profile validates the access contract and rejects omissions
+  ---
+  duration_ms: 2.2941
+  type: 'test'
+  ...
+# Subtest: REL-OBS-027: profile refuses unsupported schema features instead of silently passing
+ok 27 - REL-OBS-027: profile refuses unsupported schema features instead of silently passing
+  ---
+  duration_ms: 0.1164
+  type: 'test'
+  ...
+# Subtest: REL-OBS-028: candidate entry cannot be selected as an installable release
+ok 28 - REL-OBS-028: candidate entry cannot be selected as an installable release
+  ---
+  duration_ms: 0.3109
+  type: 'test'
+  ...
+# Subtest: REL-OBS-029: inherited values cannot establish observed guard facts
+ok 29 - REL-OBS-029: inherited values cannot establish observed guard facts
+  ---
+  duration_ms: 0.2126
+  type: 'test'
+  ...
+# Subtest: REL-OBS-030: malformed module metadata and duplicate states are rejected
+ok 30 - REL-OBS-030: malformed module metadata and duplicate states are rejected
+  ---
+  duration_ms: 0.2864
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 108.7401

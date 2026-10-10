@@ -254,6 +254,10 @@ The instruction above requests full setup: the AI prepares private local state, 
 
 Normative edits start in the source. Derive Core and on-demand modules from complete semantic analysis, with no fixed parser, heading-to-module table or required programming runtime. Reassess module/schema sets, dependencies, routing, bidirectional traceability, migration, validation and permanent regression coverage.
 
+Canonical REL-01–REL-11 require an AI-first distribution: typed JSON contracts, a non-empty entry, compact semantic routing and dependency closure, explicit lifecycle transitions, selective context/reuse, applicable local controls and measured maintainer acceptance. Human-oriented release readability must not increase consumer cost or latency; required user explanations and organizational history remain. Performance improvements are measurements, not assumptions about serialization. Consumer bootstrap never validates the OOP repository or executes release tests.
+
+The current `dist/README.md` is a minimal canonical-bootstrap compatibility pointer. The structured reference artifacts under [maintainer](maintainer/README.md) are incomplete candidates, not an installable or verified release. Their local tests and fixture benchmark belong only to maintenance. A ready `dist/entry.json` replaces the official entry only after complete semantic coverage and applicable release acceptance; Node, CEL and MCP are not consumer-wide prerequisites.
+
 Reuse valid freshness evidence during bounded upstream synchronization; preserve local work. Persist English content and localize interaction to the user's language. This README provides orientation; the canonical source defines the protocol.
 
 ### Publishing an OOP revision

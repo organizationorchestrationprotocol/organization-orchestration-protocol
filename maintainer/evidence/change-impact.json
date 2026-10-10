@@ -1,0 +1,182 @@
+{
+  "current_source_identity": "sha256:25ede22c43f81c7292b6a9bd161d76a8198a27f35e75dd993601feadb7b7abcf",
+  "baseline_commit": "2a372630f45e4f7466bb9d4587d4e841e986e482",
+  "baseline_kind": "identified local prior source; previously verified rolling release baseline not established",
+  "retained_source": "preserved_verbatim_except_explicit_index_replacement",
+  "deltas": [
+    {
+      "id": "SD-REL-01",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-01"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-01",
+      "content_identity": "sha256:0cb241c36acd37158f36f76d2d44a7fbc0bec06a65c7b64bc20f0774f068c752",
+      "summary": "Maintainers MUST prepare an execution-oriented derived distribution from complete semantic analysis of current canonical OOP",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-02",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-02"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-02",
+      "content_identity": "sha256:9cec43f81fec1cb09bda663419d781d0ed36eeae089bbfad050a627e3fb10365",
+      "summary": "A ready release MUST have a non-empty directly discoverable machine-oriented entry contract identifying the supported lifecycle routes, minimum initial context, bootstrap procedure and compact selector through exact package-relative references",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-03",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-03"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-03",
+      "content_identity": "sha256:5207dbdbac64f46fc490450ba99c1c8e1d9d178da8093956e90542154fb36213",
+      "summary": "Maintainers MUST export structured operational contracts in JSON using a versioned JSON Schema profile for producer validation",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-04",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-04"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-04",
+      "content_identity": "sha256:4a248627411e889c97c4f1dc4a7e7a7c60fda5a596a273f31bf2af3a87ffdf59",
+      "summary": "Maintainers MUST derive a small always-required Core and semantically complete action/lifecycle modules, with compact routing selection metadata and explicit dependencies",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-05",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-05"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-05",
+      "content_identity": "sha256:72e5f4841a7ab006561da4aa740e15cd4ff2e6d31c15bcb99afa598489274733",
+      "summary": "Bootstrap, adoption, migration and recovery MUST have formal state/transition contracts with stable step identities, preconditions, ownership, attempts, observed outcomes, verification guards, next action, human/external wait disposition and safe resume behavior",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-06",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-06"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-06",
+      "content_identity": "sha256:a4f54d70810fb50e82af288fe472f673e105fe5784a4ff9aef26252755379ece",
+      "summary": "Consumer context assembly MUST select exact contract identities and complete dependency closure, deduplicate by identity and assemble governing content deterministically from normalized authoritative inputs where the runtime supports it",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-07",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-07"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-07",
+      "content_identity": "sha256:2f925341c1d34732c724cd0ef6c6ee516b1665302c1e5ad4e6afe9058b40a7e6",
+      "summary": "Formalizable checks SHOULD be evaluated locally through existing sufficient mechanisms without another model call",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-08",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-08"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-08",
+      "content_identity": "sha256:14203cbda529101285ff7133fe9b271aa40f2687da291cbd108826b2093c9445",
+      "summary": "Repository discovery, credential access, persistence, routing, context retrieval and recovery interfaces MUST distinguish typed intent, permitted scope, expected state, actual attempt, observations, verification basis, failure and next action",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-09",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-09"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-09",
+      "content_identity": "sha256:3a3fda9f3a6d4e56dc57043a574eb6edbcf5c36e2d907357e32b7fde8cf8c142",
+      "summary": "Checkpoints MUST distinguish shared same-project references from runtime-owned adoption/integration and canonical organizational state, retain only facts needed for continuity and bind valid evidence to relevant dependencies",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-10",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-10"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-10",
+      "content_identity": "sha256:eac5f1f3ce08624ae0ee6c2c0f7ee18ce0731c2a5eb0421cf72f0429eed03ccc",
+      "summary": "Producer validation MUST cover canonical-to-contract semantic preservation, retained requirements, structured shape, all exact references, deterministic routing/closure, positive/negative/unknown decisions, valid state transitions, partial-effect recovery, ownership/isolation, selective invalidation and faithful context assembly",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-11",
+      "classification": "normative_addition",
+      "requirements": [
+        "REL-11"
+      ],
+      "source_locator": "PROMPT.md:AI-first distribution acceptance contract:REL-11",
+      "content_identity": "sha256:2da37afb254319220c4d3b9e05749f39d6b75f71368f73c250ad598f7d09c316",
+      "summary": "Maintainers MUST retain per-scope readiness and limitations: structural/fixture/semantic/source coverage, real installed integration, provider execution and cross-runtime behavior are separate results",
+      "derived_disposition": "candidate references only; complete production export pending",
+      "evidence_ref": "maintainer/evidence/local-validation.json",
+      "semantic_coverage": "pending_complete_export"
+    },
+    {
+      "id": "SD-REL-INDEX",
+      "classification": "owner_authorized_normative_replacement",
+      "requirements": [
+        "Semantic Routing Index",
+        "REL-01",
+        "REL-04"
+      ],
+      "source_locator": "PROMPT.md:Semantic Routing Index and deterministic closure",
+      "content_identity": "sha256:ba395a62dfe43ac155d282c79515a15bd70b1b3bf06d32613da9158839e37687",
+      "minimally_superseded": "human-inspectable distribution-index requirement and flat placement of all index fields",
+      "authority_ref": "current owner request approving the AI-first release plan; no commit authorization",
+      "reason": "Human presentation must not increase consumer costs; compact selection and exact detailed references retain field coverage.",
+      "preserved": "canonical authority, conservative routing, required index fields, source binding, producer evidence and BOOT-04 exclusions",
+      "evidence_ref": "maintainer/evidence/local-validation.json"
+    }
+  ],
+  "impact": {
+    "README": "affected: maintainer guidance and explicit candidate limits",
+    "examples": "affected: AI-first scenarios",
+    "maintainer_guidance": "affected: reference procedures and producer-only commands",
+    "schemas": "affected: new restricted contract profile",
+    "tests": "affected: 30 isolated observations",
+    "generated_artifacts": "affected: single non-installable candidate contract; complete distribution pending",
+    "release_evidence": "affected: exact subject identities, test outcomes and isolated benchmark; readiness false"
+  },
+  "release_ready": false,
+  "unresolved": [
+    "full_semantic_export",
+    "verified_rolling_regression_basis",
+    "applicable_live_integration"
+  ]
+}

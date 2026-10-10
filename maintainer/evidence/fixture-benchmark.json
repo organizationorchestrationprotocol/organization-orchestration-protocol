@@ -1,0 +1,139 @@
+{
+  "status": "candidate_fixture_measurement",
+  "observed_at": "2026-10-10T10:58:30.584Z",
+  "node_version": "v23.11.0",
+  "identities": {
+    "../PROMPT.md": "25ede22c43f81c7292b6a9bd161d76a8198a27f35e75dd993601feadb7b7abcf",
+    "./reference-engine.mjs": "7bfaa9f49632604e36cdca916c8e0403e715fa47d417013235820946f4c66e8c",
+    "./benchmark.mjs": "186d96a30fb08faee74b330917e47e13da9afdcc673917b7202e49880d604725",
+    "./fixtures/catalog.json": "13347a658a811cda6c7201c9acca93f81322194e1ac37fa0e8053b10ca99bc3a"
+  },
+  "comparison_basis": "Full fixture governing-context superset versus deterministic selected fixture closure. Not a previously verified release baseline; not production semantic coverage.",
+  "release_ready": false,
+  "installed_runtime": "not_performed",
+  "provider_execution": "not_performed",
+  "cross_runtime": "not_performed",
+  "schema_validation": "not_performed",
+  "full_semantic_conformance": "not_verified",
+  "measurements": [
+    {
+      "id": "fresh_install",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core",
+        "operations",
+        "bootstrap"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 577,
+      "engine_duration_ms": 0.23669999999999902,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    },
+    {
+      "id": "enabled_workspace",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core",
+        "operations",
+        "bootstrap"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 577,
+      "engine_duration_ms": 0.05379999999999541,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    },
+    {
+      "id": "ordinary_g0",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 180,
+      "engine_duration_ms": 0.01850000000000307,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    },
+    {
+      "id": "authorized_durable_write",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core",
+        "operations"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 389,
+      "engine_duration_ms": 0.011700000000004707,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    },
+    {
+      "id": "due_update",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core",
+        "recovery"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 374,
+      "engine_duration_ms": 0.11830000000000496,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    },
+    {
+      "id": "context_loss",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core",
+        "recovery"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 374,
+      "engine_duration_ms": 0.015300000000003422,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    },
+    {
+      "id": "interrupted_setup",
+      "evidence_tier": "isolated_fixture",
+      "modules": [
+        "core",
+        "operations",
+        "bootstrap",
+        "recovery"
+      ],
+      "baseline_governing_bytes": 771,
+      "selected_governing_bytes": 771,
+      "engine_duration_ms": 0.01120000000000232,
+      "end_to_end_duration": "not_measured",
+      "tokenizer_tokens": "not_measured",
+      "actual_model_calls": "not_measured",
+      "actual_runtime_actions": "not_measured",
+      "monetary_cost": "not_measured"
+    }
+  ],
+  "invalidation_example": [
+    "adapter-proof",
+    "adoption"
+  ]
+}
