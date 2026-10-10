@@ -16,7 +16,7 @@ Read https://github.com/organizationorchestrationprotocol/oop/blob/main/maintena
 
 Always respond in the user's preferred language.
 
-You should have been invoked with the following text:
+You should have been directed here by an instruction similar to this:
 
 ```text
 execute the section #diagnose of the prompt md file at this location: https://github.com/organizationorchestrationprotocol/oop/blob/main/maintenance/LIFECYCLE.md#diagnose
@@ -32,7 +32,7 @@ The AI tool must always prepare its internal tools to perform the necessary form
 
 Always respond in the user's preferred language.
 
-You should have been invoked with the following text:
+You should have been directed here by an instruction similar to this:
 
 ```text
 execute the section #prepare of the prompt md file at this location: https://github.com/organizationorchestrationprotocol/oop/blob/main/maintenance/LIFECYCLE.md#prepare
@@ -56,7 +56,7 @@ You MUST explain what you are doing step by step as you prepare the prompt. Thes
 
 Always respond in the user's preferred language.
 
-You should have been invoked with the following text:
+You should have been directed here by an instruction similar to this:
 
 ```text
 execute the section #verify of the prompt md file at this location: https://github.com/organizationorchestrationprotocol/oop/blob/main/maintenance/LIFECYCLE.md#verify
