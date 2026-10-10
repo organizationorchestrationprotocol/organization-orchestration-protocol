@@ -20,7 +20,7 @@ if (!revisedIndex || !oldIndex) throw new Error('Missing index replacement');
 const normalized = value => value.replace(/\r\n/g, '\n').trimEnd();
 const retained = (source.slice(0, start) + source.slice(end)).replace(revisedIndex, oldIndex);
 if (normalized(retained) !== normalized(baseline.stdout)) throw new Error('Unexpected retained source changes');
-const run = spawnSync(process.execPath, ['--test', '--test-reporter=tap', 'maintainer/reference-engine.test.mjs'],
+const run = spawnSync(process.execPath, ['--test', '--test-reporter=tap', 'build_tools/reference-engine.test.mjs'],
   { cwd: root, encoding: 'utf8', maxBuffer: 1024 * 1024 });
 const observations = [...run.stdout.matchAll(/^ok \d+ - (REL-OBS-\d+): (.+)$/gm)]
   .map(match => ({ id: match[1], checked: match[2], expected: 'passes positive/negative/unknown isolated fixture assertions', actual: 'passed' }));
@@ -41,7 +41,7 @@ for (let n = 1; n <= 11; n++) {
   deltas.push({ id: `SD-${id}`, classification: 'normative_addition', requirements: [id],
     source_locator: `PROMPT.md:AI-first distribution acceptance contract:${id}`, content_identity: hash(clause),
     summary: clause.split(' — ')[1].split('. ')[0], derived_disposition: 'candidate references only; complete production export pending',
-    evidence_ref: 'maintainer/evidence/local-validation.json', semantic_coverage: 'pending_complete_export' });
+    evidence_ref: 'build_tools/evidence/local-validation.json', semantic_coverage: 'pending_complete_export' });
 }
 deltas.push({ id: 'SD-REL-INDEX', classification: 'owner_authorized_normative_replacement',
   requirements: ['Semantic Routing Index', 'REL-01', 'REL-04'],
@@ -50,7 +50,7 @@ deltas.push({ id: 'SD-REL-INDEX', classification: 'owner_authorized_normative_re
   authority_ref: 'current owner request approving the AI-first release plan; no commit authorization',
   reason: 'Human presentation must not increase consumer costs; compact selection and exact detailed references retain field coverage.',
   preserved: 'canonical authority, conservative routing, required index fields, source binding, producer evidence and BOOT-04 exclusions',
-  evidence_ref: 'maintainer/evidence/local-validation.json' });
+  evidence_ref: 'build_tools/evidence/local-validation.json' });
 writeFileSync(new URL('change-impact.json', evidenceDir), JSON.stringify({
   current_source_identity: hash(source), baseline_commit: revision.stdout.trim(),
   baseline_kind: 'identified local prior source; previously verified rolling release baseline not established',

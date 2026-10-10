@@ -38,4 +38,4 @@ const report = {
 mkdirSync(new URL('./evidence/', import.meta.url), { recursive: true });
 writeFileSync(new URL('./evidence/fixture-benchmark.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
 process.stdout.write(JSON.stringify({ release_ready: false, scenarios: measurements.length,
-  evidence: 'maintainer/evidence/fixture-benchmark.json' }) + '\n');
+  evidence: 'build_tools/evidence/fixture-benchmark.json' }) + '\n');

@@ -10,30 +10,34 @@ const hash=x=>`sha256:${createHash('sha256').update(x).digest('hex')}`;
 const text=path=>readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
 const json=path=>JSON.parse(text(path));
 const source=text('PROMPT.md').replace(/\r\n/g,'\n');
-const trace=json('maintainer/evidence/release-traceability.json');
+const trace=json('build_tools/evidence/release-traceability.json');
 function subjects(){return files('dist').filter(x=>x.endsWith('.json')).concat([
-  'PROMPT.md','maintainer/release-plan.mjs','maintainer/release-review.json','maintainer/generate-release.mjs',
-  'maintainer/release-engine.mjs','maintainer/release.test.mjs','maintainer/accept-release.mjs',
-  'maintainer/reference-engine.mjs','maintainer/reference-engine.test.mjs','maintainer/schema-profile.mjs',
-  'maintainer/schemas/contract.schema.json','maintainer/evidence/release-traceability.json',
-  'README.md','examples.md','CHANGELOG.md','maintainer/README.md',
+  'PROMPT.md','build_tools/release-plan.mjs','build_tools/release-review.json','build_tools/generate-release.mjs',
+  'build_tools/release-engine.mjs','build_tools/release.test.mjs','build_tools/accept-release.mjs',
+  'build_tools/reference-engine.mjs','build_tools/reference-engine.test.mjs','build_tools/schema-profile.mjs',
+  'build_tools/schemas/contract.schema.json','build_tools/evidence/release-traceability.json',
+  'README.md','examples.md','CHANGELOG.md','build_tools/README.md',
 ]).sort();}
 const identify=paths=>Object.fromEntries(paths.map(path=>[path,hash(readFileSync(new URL(`../${path}`,import.meta.url)))]));
 const frozenIdentities=identify(subjects());
 const git = args => spawnSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
 // Find the latest committed accepted package, never silently choose an older one.
-const history=git(['log','--format=%H','--','maintainer/evidence/release-acceptance.json']);
+const acceptancePaths=['build_tools/evidence/release-acceptance.json','maintainer/evidence/release-acceptance.json'];
+const history=git(['log','--format=%H','--',...acceptancePaths]);
 if(history.status!==0)throw new Error('Cannot establish latest-prior regression basis');
 let packageBaseline;
 for(const recordCommit of history.stdout.trim().split('\n').filter(Boolean)){
-  const result=git(['show',`${recordCommit}:maintainer/evidence/release-acceptance.json`]);
-  if(result.status!==0)continue;
-  const report=JSON.parse(result.stdout);
-  if(report.release_ready===true){packageBaseline={recordCommit,report,identity:hash(result.stdout)};break;}
+  for(const path of acceptancePaths){
+    const result=git(['show',`${recordCommit}:${path}`]);
+    if(result.status!==0)continue;
+    const report=JSON.parse(result.stdout);
+    if(report.release_ready===true){packageBaseline={recordCommit,report,identity:hash(result.stdout)};break;}
+  }
+  if(packageBaseline)break;
 }
 const initialBaseline='8de5d1fb6efb865710c7750b65cff2a744a4c239';
 const baselineCommit=packageBaseline?.report.source_snapshot_commit??initialBaseline;
-const run=spawnSync(process.execPath,['--test','--test-reporter=tap','maintainer/reference-engine.test.mjs','maintainer/release.test.mjs'],
+const run=spawnSync(process.execPath,['--test','--test-reporter=tap','build_tools/reference-engine.test.mjs','build_tools/release.test.mjs'],
   {cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
 const observations=[...run.stdout.matchAll(/^ok \d+ - ((?:REL-OBS|REL-PKG)-\d+): (.+)$/gm)].map(match=>({
   id:match[1],checked:match[2],expected:'isolated local assertion passes, including applicable designed negative controls',actual:'passed',
@@ -42,6 +46,7 @@ const observations=[...run.stdout.matchAll(/^ok \d+ - ((?:REL-OBS|REL-PKG)-\d+):
 const testPassed=run.status===0 && observations.length===55 && /^# fail 0$/m.test(run.stdout);
 const previous=git(['show',`${baselineCommit}:PROMPT.md`]);
 const priorSourceEqual=previous.status===0&&previous.stdout.replace(/\r\n/g,'\n')===source;
+// This fixed checkpoint predates the directory rename.
 const priorProof=git(['show',`${initialBaseline}:maintainer/evidence/local-validation.json`]);
 if(priorProof.status!==0)throw new Error('No attributable preceding source validation checkpoint; establish a reviewed regression basis first');
 const baselineProof=JSON.parse(priorProof.stdout);
@@ -93,7 +98,7 @@ const report={
   source_identity:hash(source),source_snapshot_commit:trace.source_snapshot_commit,
   scope:'producer-prepared technology-neutral derived distribution; no installed-runtime/provider/cross-runtime readiness claim',
   release_ready:accepted,publication:'not_performed_for_generated_package',runtime_adoption:'not_performed',checks,identities,
-  semantic_review:{result:'reasoned_complete_allocation_with_verbatim_source_preservation',reference:'maintainer/release-review.json',
+  semantic_review:{result:'reasoned_complete_allocation_with_verbatim_source_preservation',reference:'build_tools/release-review.json',
     evidence_strength:'source reasoning plus exact reconstruction; independent reviewer and live prevention not claimed'},
   rolling_baseline:{commit:baselineCommit,source_identity:hash(previous.stdout.replace(/\r\n/g,'\n')),
     package_checkpoint:packageBaseline?{commit:packageBaseline.recordCommit,content_identity:packageBaseline.identity}:null,

@@ -1,0 +1,45 @@
+# OOP Lifecycle Prompts
+
+Each section below contains a separate maintenance prompt. Use its anchor link to select the prompt you want the AI to follow, along with any recommendations, implementation prompt, request or problem report it needs from your chat.
+
+- [Diagnose requests and/or problems and propose changes and/or fixes](#diagnose)
+- [Prepare an implementation prompt](#prepare)
+- [Verify implementation and regressions](#verify)
+
+To reference a section from an AI chat, append its anchor to the full file URL. For example, once this file is available on the repository's `main` branch:
+
+```text
+Read https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol/blob/main/maintenance/LIFECYCLE.md#prepare and follow only the prompt in that section, ending at the next level-two heading. Use the recommendations from this chat as input.
+```
+
+## DIAGNOSE
+
+Analyze the information I have provided, identify where and how the reported requests can be satisfied and/or problems can be corrected, and suggest changes to OOP that would satisfy those requests and/or prevent those problems from recurring in any AI runtime.
+
+Your most important constraint is to preserve every project constraint established so far. Introduce additions that I request or that you propose only if they preserve the rigor already established in the canonical source.
+
+The AI tool must always prepare its internal tools to perform the necessary formal, unambiguous checks so that the relevant OOP rules are enforced every time.
+
+## PREPARE
+
+Act as the prompt engineer responsible for telling Codex how to make the changes needed to implement all the improvements and solutions you have recommended. Ensure that these changes introduce no regressions in the current canonical source.
+
+The canonical source must always remain completely vendor- and tool-agnostic.
+
+If the changes make it possible to add new examples or improve `README.md`, do so while preserving the README's existing structure: the call to action at the top, followed by what OOP is and how it works, then everything else.
+
+The human-facing text in the README and examples must be understandable even to a complete beginner trying to figure out what OOP is, what it does, and especially how it can help them earn or save money with little effort, few clicks, and few interactions with AI tools.
+
+To reduce costs, do as much of the reasoning as possible yourself and write the implementation prompt so that Codex uses as few credits as possible.
+
+Provide the prompt as a downloadable Markdown file named `OOP_<unix_timestamp>_<descriptive_name>.md`, where `<unix_timestamp>` is the number of seconds since the Unix epoch at the time the file is created.
+
+Explain what you are doing step by step. Before proceeding, summarize what you plan to introduce into OOP so I can check that everything is included. Explain whether changing the full canonical prompt and regenerating the derived artifacts is necessary, and why.
+
+## VERIFY
+
+Analyze the repository to verify whether the latest implementation prompt you generated for me has been implemented and whether any project requirement has regressed.
+
+In your response, use less technical language and focus on practical consequences. Keep descriptions concise, but make captions and explanations complete. Use brief, meaningful examples.
+
+Do not simply agree with me or tell me everything is fine when it is not.

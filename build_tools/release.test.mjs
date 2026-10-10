@@ -7,9 +7,9 @@ import { closure,evaluateGuard,operationsAccess,invalidated,reusable } from './r
 import { validateProfile } from './schema-profile.mjs';
 const read = path => readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
 const source=read('PROMPT.md').replace(/\r\n/g,'\n'), sourceLines=source.split('\n');
-const trace=JSON.parse(read('maintainer/evidence/release-traceability.json'));
-const review=JSON.parse(read('maintainer/release-review.json'));
-const schema=JSON.parse(read('maintainer/schemas/contract.schema.json'));
+const trace=JSON.parse(read('build_tools/evidence/release-traceability.json'));
+const review=JSON.parse(read('build_tools/release-review.json'));
+const schema=JSON.parse(read('build_tools/schemas/contract.schema.json'));
 const bootstrap=readJSON('procedures/bootstrap.json');
 const facts=(request=[],extra={})=>({classification:'known',request,...extra});
 const includes=(selected,...ids)=>ids.every(id=>selected.modules.includes(id));

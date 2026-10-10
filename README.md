@@ -256,9 +256,22 @@ Normative edits start in the source. Derive Core and on-demand modules from comp
 
 Canonical REL-01–REL-11 require an AI-first distribution: typed JSON contracts, a non-empty entry, compact semantic routing and dependency closure, explicit lifecycle transitions, selective context/reuse, applicable local controls and measured maintainer acceptance. Human-oriented release readability must not increase consumer cost or latency; required user explanations and organizational history remain. Performance improvements are measurements, not assumptions about serialization. Consumer bootstrap never validates the OOP repository or executes release tests.
 
-The structured distribution starts at `dist/entry.json`. It provides a small routing index, explicitly referenced JSON modules, complete source-qualified semantic clauses, BOOT-01–13 guards and lifecycle/interface contracts. Producer evidence under [maintainer](maintainer/README.md) records exact source coverage, local checks and measured selected-context bytes. This package does not install runtime controls or prove provider/cross-runtime integration; each consumer establishes its own scoped readiness. Node, CEL and MCP are not consumer-wide prerequisites. Earlier single-contract candidates and synthetic fixtures remain explicitly non-installable reference examples.
+The structured distribution starts at `dist/entry.json`. It provides a small routing index, explicitly referenced JSON modules, complete source-qualified semantic clauses, BOOT-01–13 guards and lifecycle/interface contracts. Producer evidence under [build tools](build_tools/README.md) records exact source coverage, local checks and measured selected-context bytes. This package does not install runtime controls or prove provider/cross-runtime integration; each consumer establishes its own scoped readiness. Node, CEL and MCP are not consumer-wide prerequisites. Earlier single-contract candidates and synthetic fixtures remain explicitly non-installable reference examples.
 
 Reuse valid freshness evidence during bounded upstream synchronization; preserve local work. Persist English content and localize interaction to the user's language. This README provides orientation; the canonical source defines the protocol.
+
+### Maintenance prompts
+
+The `maintenance/` directory collects reusable prompts for maintaining the OOP repository:
+
+- [Technical audit](maintenance/PROMPT.md): read-only repository audit and consolidated corrective recommendations.
+- [DIAGNOSE](maintenance/LIFECYCLE.md#diagnose): analyze requests or problems and propose changes.
+- [PREPARE](maintenance/LIFECYCLE.md#prepare): turn recommendations into an implementation prompt.
+- [VERIFY](maintenance/LIFECYCLE.md#verify): check implementation and regressions.
+
+To invoke a lifecycle prompt in an AI chat, provide its full file URL with the section anchor and the relevant input from your chat. See the [copyable example](maintenance/LIFECYCLE.md). These are maintainer instructions; `maintenance/PROMPT.md` is separate from the canonical normative [PROMPT.md](PROMPT.md) at the repository root.
+
+Build scripts, tests, schemas and producer evidence live in [build_tools](build_tools/README.md). Maintenance prompts follow the [repository maintenance guidance](#for-ai-tools-maintaining-this-repository) and the canonical requirements in [PROMPT.md](PROMPT.md).
 
 ### Publishing an OOP revision
 

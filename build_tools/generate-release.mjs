@@ -70,7 +70,7 @@ facets.completion=['entry']; facets.update=['adoption']; facets.context_loss=['r
 facets.canonical_write=['operations','execution','history']; facets.continuity_reserve=['handoff'];
 save('dist/routing.json',{
   format:1,algorithm:'union(request,action,state,risk,authority,recovery) -> deterministic dependency closure',
-  producer_binding:{source_identity:hash(source),source_snapshot_commit:commit.stdout.trim(),evidence_ref:'../maintainer/evidence/release-acceptance.json',consumer_verification:'not_performed'},
+  producer_binding:{source_identity:hash(source),source_snapshot_commit:commit.stdout.trim(),evidence_ref:'../build_tools/evidence/release-acceptance.json',consumer_verification:'not_performed'},
   classification:'Semantic effective scope, not keywords, endpoints or automatic level/module table.',
   default:['entry'],modules:indexModules,facets,conservative:modules.filter(x=>x.id!=='producer').map(x=>x.id),
   unknown:'Load sufficient conservative context to resolve material uncertainty before dependent effects; unknown selectors fail, no authority granted.',
@@ -162,8 +162,8 @@ save('dist/entry.json',{
   consumer_exclusion:'Never run maintainer commands, schemas as release tests, OOP repository audits, hashes/signatures/inventories/publisher/TOFU checks during consumer lifecycle. Consumer-local installed/access probes remain distinct.',
   runtime:'Select supported existing mechanisms under canonical authority; this package does not install controls, prove provider access or claim Full OOP runtime governance.',
 });
-save('maintainer/evidence/release-traceability.json',{
-  source_identity:hash(source),source_snapshot_commit:commit.stdout.trim(),source_normalization:'CRLF to LF only',review_ref:'maintainer/release-review.json',
+save('build_tools/evidence/release-traceability.json',{
+  source_identity:hash(source),source_snapshot_commit:commit.stdout.trim(),source_normalization:'CRLF to LF only',review_ref:'build_tools/release-review.json',
   preservation:'preserved_verbatim',coverage_complete:true,
   clauses:contracts.map(({span,contract})=>({...span,content_identity:contract.source.content_identity,artifact:`dist/modules/${span.module}.json`,contract:contract.id})),
   modules:indexModules,
