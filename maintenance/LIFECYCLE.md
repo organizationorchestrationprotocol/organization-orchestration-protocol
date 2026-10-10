@@ -48,9 +48,9 @@ The human-facing text in the README and examples must be understandable even to 
 
 To reduce costs, do as much of the reasoning as possible yourself and write the implementation prompt so that the AI tool uses as few resources as possible.
 
-Provide the prompt as a downloadable Markdown file named `OOP_<unix_timestamp>_<descriptive_name>.md`, where `<unix_timestamp>` is the number of seconds since the Unix epoch at the time the file is created.
+Provide the prompt as a downloadable Markdown file named `OOP_<unix_timestamp>_<descriptive_name>.md`, where `<unix_timestamp>` is the number of seconds since the Unix epoch at the time the file is created. You MUST write the implementation prompt and the entire Markdown file in English. All messages addressed to the user MUST be in the user's preferred language.
 
-Explain what you are doing step by step. Before proceeding, summarize what you plan to introduce into OOP so I can check that everything is included. Explain whether changing the full canonical prompt and regenerating the derived artifacts is necessary, and why.
+You MUST explain what you are doing step by step as you prepare the prompt. These explanations are mandatory and MUST be displayed to the user in their preferred language. Other user-facing explanations MUST also use the user's preferred language. Do not omit the step-by-step explanations or replace them with only the final prompt or a final summary.
 
 ## VERIFY
 

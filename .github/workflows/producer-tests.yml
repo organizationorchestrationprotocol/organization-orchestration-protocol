@@ -1,0 +1,25 @@
+name: Producer tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  local-tests:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Run producer assertions with the runner's Node.js
+        run: |
+          node --version
+          status=0
+          node --test --test-reporter=tap build_tools/reference-engine.test.mjs build_tools/release.test.mjs build_tools/prune-artifacts.test.mjs build_tools/producer-safety.test.mjs > "$RUNNER_TEMP/producer-tests.tap" || status=$?
+          cat "$RUNNER_TEMP/producer-tests.tap"
+          test "$status" -eq 0
+          grep -qx '# skipped 0' "$RUNNER_TEMP/producer-tests.tap"
+          git diff --exit-code

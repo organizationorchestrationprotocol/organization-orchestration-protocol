@@ -329,10 +329,12 @@ Confirm **once** the selected verdict, its scope, and the **objective conditions
 
 You MUST end the audit report with a **bulleted list of all proposed fixes and improvements** arising from the analysis, including the errors, defects, and improvement opportunities identified. Include mandatory fixes AND justified improvements that are safe to defer; a lack of P0/P1 findings does not permit omission of other proposed changes. Consolidate overlapping suggestions and reference their finding IDs and priority/disposition so this list remains consistent with the findings and the single corrective package. Every proposed change elsewhere in the report MUST appear in this list or be explicitly mapped to a consolidated item.
 
-Each suggestion MUST be a separate top-level bullet containing ALL FOUR of the following explicitly labeled fields. A suggestion missing any field is incomplete:
+Each suggestion MUST be a separate top-level bullet containing ALL SIX of the following explicitly labeled fields. A suggestion missing any field is incomplete:
 
 - **Audience and artifact:** identify whether the proposed change concerns human-facing documentation, maintainer documentation, AI runtime instructions/contracts, or documentation for users of the runtime. Include all applicable categories; for changes to code, tests, or evidence, name the artifact and its intended audience explicitly.
 - **Proposed change:** a brief, concise, complete description of what you would change and why, identifying the affected files or sections.
+- **Canonical source change:** explicitly state whether the proposal requires changing the canonical `PROMPT.md`, and explain why or why not. If this cannot be determined from the available evidence, state the uncertainty and what is needed to resolve it.
+- **Distribution regeneration:** separately state whether the proposal requires regenerating the derived distribution, and explain why or why not. Do not assume that a producer/tooling or documentation change requires regeneration. If this cannot be determined, state the uncertainty and what is needed to resolve it.
 - **Strengths and weaknesses:** briefly explain the expected benefits and the relevant drawbacks, costs, limitations, or tradeoffs. Distinguish measured outcomes from expectations.
 - **Practical examples:** provide concise, concrete examples showing how the proposed change would affect an actual maintenance task, runtime behavior, or user interaction.
 
@@ -341,12 +343,16 @@ Use this structure for EVERY suggestion, filling in the actual content rather th
 - **[Finding ID(s), priority/disposition] Suggestion title**
   - **Audience and artifact:** applicable audience categories and affected files or sections.
   - **Proposed change:** what you would change and why.
+  - **Canonical source change:** required or not required, with the reason; explicitly identify any unresolved uncertainty.
+  - **Distribution regeneration:** required or not required, with the reason; explicitly identify any unresolved uncertainty.
   - **Strengths and weaknesses:** expected benefits AND drawbacks, costs, limitations, or tradeoffs; explicitly state when none are identified within the assessed scope.
   - **Practical examples:** at least one concrete example showing the current problem and the expected behavior or wording after the change. Label illustrative scenarios as examples, not executed tests.
 
+If ANY proposal requires changing the canonical source and/or regenerating the distribution, you MUST prominently disclose this in a bold notice at the beginning of the Verdict and immediately before the proposed-change bullets. Identify the affected proposal IDs, which operation each requires, and why. Do not leave this information buried inside individual bullets. Translate the notice into the user's preferred language.
+
 Keep each suggestion easy to evaluate without rereading the full report. Use plain language and concise but complete descriptions. Preserve the established project constraints and do not introduce unsupported recommendations merely to populate the list. If no changes are justified, you MUST still include this section with a bullet stating that no changes are proposed and explaining the verified scope and relevant limitations; do not invent suggestions or claim an absolute absence of defects.
 
-**Final response completeness check:** Before sending the report, you MUST check that this final section is present, every proposed change is accounted for, and every suggestion includes all four labeled fields and at least one practical example. If any check fails, complete the missing content BEFORE sending the response. You MUST NOT present the audit report as complete or ask the user to request the missing list separately. Any required commit/push status statement may follow this section.
+**Final response completeness check:** Before sending the report, you MUST check that this final section is present, every proposed change is accounted for, and every suggestion includes all six labeled fields and at least one practical example. Verify that each canonical-source and distribution-regeneration disposition includes its reason and that the prominent notices are present whenever either operation is required by any proposal. If any check fails, complete the missing content BEFORE sending the response. You MUST NOT present the audit report as complete or ask the user to request the missing list separately. Any required commit/push status statement may follow this section.
 
 ## 9. Concluding Rule
 

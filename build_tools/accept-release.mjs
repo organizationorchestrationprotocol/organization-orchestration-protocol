@@ -1,15 +1,16 @@
 // Producer acceptance of this derived package only. Never a consumer command.
-import { readFileSync,writeFileSync,readdirSync } from 'node:fs';
+import { readFileSync,writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
 import { fileURLToPath } from 'node:url';
 import { contextSession,select,readJSON } from './release-engine.mjs';
+import { subjects as subjectPaths, identify as identifyInputs, testFiles, expectedObservations } from './acceptance-inputs.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const hash=x=>`sha256:${createHash('sha256').update(x).digest('hex')}`;
 const text=path=>readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
 const json=path=>JSON.parse(text(path));
-const git = args => spawnSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
+const git = args => spawnSync('git',['--no-optional-locks',...args],{cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
 const outputMode=process.argv.slice(2);
 if(outputMode.some(arg=>!['--snapshot','--check-current'].includes(arg)) || outputMode.length>1) throw new Error('Use --snapshot, --check-current, or no arguments');
 const snapshot=outputMode.includes('--snapshot');
@@ -36,16 +37,8 @@ if(outputMode.includes('--check-current')) {
 const evaluatedCheckout=checkout();
 const source=text('PROMPT.md').replace(/\r\n/g,'\n');
 const trace=json('build_tools/evidence/release-traceability.json');
-function subjects(){return files('dist').filter(x=>x.endsWith('.json')).concat([
-  'PROMPT.md','build_tools/release-plan.mjs','build_tools/release-review.json','build_tools/generate-release.mjs',
-  'build_tools/release-engine.mjs','build_tools/release.test.mjs','build_tools/accept-release.mjs',
-  'build_tools/reference-engine.mjs','build_tools/reference-engine.test.mjs','build_tools/schema-profile.mjs',
-  'build_tools/schemas/contract.schema.json','build_tools/evidence/release-traceability.json',
-  'README.md','examples.md','CHANGELOG.md','build_tools/README.md',
-  '.gitignore','maintenance/PROMPT.md','maintenance/LIFECYCLE.md',
-  'build_tools/prune-artifacts.mjs','build_tools/prune-artifacts.test.mjs',
-]).sort();}
-function identify(paths){return Object.fromEntries(paths.map(path=>[path,hash(readFileSync(new URL(`../${path}`,import.meta.url)))]));}
+function subjects(){return subjectPaths(root);}
+function identify(paths){return identifyInputs(root,paths);}
 const frozenIdentities=identify(subjects());
 // Find the latest committed accepted package, never silently choose an older one.
 const acceptancePaths=['build_tools/evidence/release-acceptance.json','maintainer/evidence/release-acceptance.json'];
@@ -63,13 +56,22 @@ for(const recordCommit of history.stdout.trim().split('\n').filter(Boolean)){
 }
 const initialBaseline='8de5d1fb6efb865710c7750b65cff2a744a4c239';
 const baselineCommit=packageBaseline?.report.source_snapshot_commit??initialBaseline;
-const run=spawnSync(process.execPath,['--test','--test-reporter=tap','build_tools/reference-engine.test.mjs','build_tools/release.test.mjs','build_tools/prune-artifacts.test.mjs'],
+const run=spawnSync(process.execPath,['--test','--test-reporter=tap',...testFiles],
   {cwd:root,encoding:'utf8',maxBuffer:2*1024*1024});
-const observations=[...run.stdout.matchAll(/^ok \d+ - ((?:REL-OBS|REL-PKG|REL-TOOL)-\d+): (.+)$/gm)].map(match=>({
-  id:match[1],checked:match[2],expected:'isolated local assertion passes, including applicable designed negative controls',actual:'passed',
-  tier:match[1].startsWith('REL-PKG')?'real_package_local_read_and_supplied_fact_model':match[1].startsWith('REL-TOOL')?'producer_artifact_cleanup':'isolated_reference_fixture',
+const observations=[...run.stdout.matchAll(/^(ok|not ok) \d+ - ((?:REL-OBS|REL-PKG|REL-TOOL)-\d+): (.+?)(?: # (SKIP|TODO)(.*))?$/gm)].map(match=>({
+  id:match[2],checked:match[3],expected:'isolated local assertion passes, including applicable designed negative controls',
+  actual:match[4]?'skipped':match[1]==='ok'?'passed':'failed',...(match[4]?{skip_reason:match[5].trim()}:{}),
+  tier:match[2].startsWith('REL-PKG')?'real_package_local_read_and_supplied_fact_model':match[2].startsWith('REL-TOOL')?'producer_freshness_and_artifact_safety':'isolated_reference_fixture',
 }));
-const testPassed=run.status===0 && observations.length===59 && new Set(observations.map(x=>x.id)).size===59 && /^# fail 0$/m.test(run.stdout);
+const observationIds=observations.map(x=>x.id);
+const observationSummary={total:observations.length,unique:new Set(observationIds).size,
+  passed:observations.filter(x=>x.actual==='passed').length,failed:observations.filter(x=>x.actual==='failed').length,
+  skipped:observations.filter(x=>x.actual==='skipped').length,
+  missing:expectedObservations.filter(id=>!observationIds.includes(id)),unexpected:observationIds.filter(id=>!expectedObservations.includes(id))};
+const testPassed=run.status===0 && observationSummary.total===observationSummary.unique &&
+  !observationSummary.missing.length && !observationSummary.unexpected.length &&
+  observations.every(x=>x.actual==='passed') && /^# fail 0$/m.test(run.stdout) &&
+  new RegExp(`^# tests ${expectedObservations.length}$`,'m').test(run.stdout);
 const previous=git(['show',`${baselineCommit}:PROMPT.md`]);
 const priorSourceEqual=previous.status===0&&previous.stdout.replace(/\r\n/g,'\n')===source;
 // This fixed checkpoint predates the directory rename.
@@ -110,8 +112,6 @@ for(const item of measurements){
     end_to_end_runtime_duration:'not_measured',monetary_cost:'not_measured',user_interventions:'not_measured'});
   delete item.session;delete item.before;
 }
-function files(path){return readdirSync(new URL(`../${path}`,import.meta.url),{withFileTypes:true}).flatMap(item=>
-  item.isDirectory()?files(`${path}/${item.name}`):[`${path}/${item.name}`]);}
 const identities=identify(subjects());
 const subjectUnchanged=JSON.stringify(identities)===JSON.stringify(frozenIdentities);
 const noByteRegression=measurements.every(x=>x.selected_governing_bytes<=x.baseline_governing_bytes);
@@ -137,17 +137,19 @@ const report={
     selection_basis:'Latest committed accepted package when available; otherwise initial preceding source checkpoint. This derived-only acceptance requires identical canonical source.',
     normative_deltas:[],classification:'generated_derived_only',full_previous_distribution:packageBaseline?'identified_checkpoint':'none_available_first_complete_export',
     limits:'No historical full release/integration verification is invented. These results establish current export preservation and local mechanisms only.'},
-  observations,measurements,
+  observation_summary:observationSummary,observations,measurements,
   comparison_basis:'Same canonical source fully loaded versus selected real package closure including entry/selector and applicable procedure bytes. Cold/warm/recovery local harness; not a product end-to-end benchmark.',
   retained_requirements:trace.clauses.map(x=>({id:x.contract,disposition:'preserved_verbatim',source_identity:x.content_identity,artifact:x.artifact})),
   impact:{README:'affected: official structured entry after local package acceptance',examples:'affected: actual package and limits',
     maintainer_guidance:'affected: reusable reviewed generation and producer acceptance',schemas:'existing contract profile applied to all source contracts',
-    tests:'25 package checks, 30 retained reference observations and four producer cleanup regressions',generated_artifacts:'complete current-source export with explicit semantic bindings',
+    tests:'25 package checks, 30 retained reference observations, four retained cleanup regressions and ten new producer safety/freshness checks',generated_artifacts:'complete current-source export with explicit semantic bindings',
     release_evidence:'current exact subjects, scope-bound verdict and seven measured local scenarios'},
   limitations:{installed_runtime:'not_performed: no native adapter is shipped or claimed installed',provider_execution:'not_performed: no credentials or provider effects used',
     cross_runtime:'not_performed: technology neutrality reviewed, real product interoperability not claimed',
     general_json_schema:'not_claimed: only declared restricted profile validated',token_or_money_savings:'not_claimed',
-    formal_semantic_judgment:'not_claimed: source-qualified semantic conditions remain complete clauses'},
+    formal_semantic_judgment:'not_claimed: source-qualified semantic conditions remain complete clauses',
+    generator_application:'Preflight covers preexisting unsafe paths only; no concurrent adversarial path-change protection or multi-file atomicity. Apply I/O failure can leave partial effects; reconcile before rerunning.',
+    skipped_tests:'Explicitly recorded as skipped, never PASS; any missing, failed or skipped expected observation blocks release_ready.'},
 };
 writeFileSync(new URL(`./evidence/${tapPath}`,import.meta.url),run.stdout);
 writeFileSync(new URL(`./evidence/${reportPath}`,import.meta.url),JSON.stringify(report,null,2)+'\n');
