@@ -264,14 +264,14 @@ Reuse valid freshness evidence during bounded upstream synchronization; preserve
 
 ### Maintainer commands
 
-[MAINTENANCE.md](MAINTENANCE.md) contains the technical audit instructions and commands available to the repository maintainer:
+The [repository maintainer appendix in PROTOCOL.md](PROTOCOL.md#repository-maintainer-instructions) contains the complete technical audit instructions and commands available to the repository maintainer:
 
-- [Technical audit](MAINTENANCE.md): read-only repository audit and consolidated corrective recommendations, to be executed after reading this file if you have been instructed to act as maintainer of this repository.
-- [DIAGNOSE](MAINTENANCE.md#diagnose): analyze requests or problems and propose changes.
-- [PREPARE](MAINTENANCE.md#prepare): turn recommendations into an implementation prompt.
-- [VERIFY](MAINTENANCE.md#verify): check implementation and regressions.
+- [Technical audit](PROTOCOL.md#repository-maintainer-instructions): read-only repository audit and consolidated corrective recommendations, to be executed after reading this file if you have been instructed to act as maintainer of this repository.
+- [DIAGNOSE](PROTOCOL.md#diagnose): analyze requests or problems and propose changes.
+- [PREPARE](PROTOCOL.md#prepare): turn recommendations into an implementation prompt.
+- [VERIFY](PROTOCOL.md#verify): check implementation and regressions.
 
-Invoke `DIAGNOSE`, `PREPARE` or `VERIFY` with the relevant input from your chat to execute the corresponding command. These are maintainer instructions; `MAINTENANCE.md` is separate from the canonical normative [PROTOCOL.md](PROTOCOL.md) at the repository root.
+Invoke `DIAGNOSE`, `PREPARE` or `VERIFY` with the relevant input from your chat to execute the corresponding command. The entire maintainer appendix applies when you have been instructed to maintain this repository, subject to your authorized task and scope. The commands run only when invoked. This appendix is separate from the organizational protocol requirements and consumer lifecycle.
 
 Build scripts, tests, schemas and producer evidence live in [tools](tools/README.md). Maintainer commands follow the [repository maintenance guidance](#for-ai-tools-maintaining-this-repository) and the canonical requirements in [PROTOCOL.md](PROTOCOL.md).
 

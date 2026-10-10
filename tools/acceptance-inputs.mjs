@@ -10,7 +10,7 @@ export const inputs = [
   'tools/reference-engine.mjs', 'tools/reference-engine.test.mjs', 'tools/schema-profile.mjs',
   'tools/schemas/contract.schema.json', 'tools/evidence/release-traceability.json',
   'README.md', 'examples.md', 'CHANGELOG.md', 'tools/README.md',
-  '.gitignore', 'MAINTENANCE.md',
+  '.gitignore',
   'tools/prune-artifacts.mjs', 'tools/prune-artifacts.test.mjs',
   'tools/fixtures/catalog.json', 'tools/fixtures/procedures.json',
   'tools/candidate/operations-access.json', 'tools/candidate/entry.json',
@@ -30,3 +30,20 @@ export function subjects(root) {
 }
 export const identify = (root, paths) => Object.fromEntries(paths.map(path => [path,
   `sha256:${createHash('sha256').update(readFileSync(join(root, path))).digest('hex')}`]));
+
+// Explicit role-scoped appendix: excluded from normative source, included in file identities.
+export function protocolSource(text) {
+  const normalized = text.replace(/\r\n/g, '\n');
+  const token = '<!-- OOP:MAINTAINER-APPENDIX -->';
+  const offset = normalized.indexOf(token);
+  if (offset === -1) {
+    if (normalized.includes('## Repository maintainer instructions')) throw new Error('Maintainer appendix boundary is missing');
+    return normalized;
+  }
+  if (offset < 2 || normalized.slice(offset - 2, offset) !== '\n\n' ||
+      normalized.indexOf(token, offset + token.length) !== -1 ||
+      !normalized.slice(offset + token.length).startsWith('\n\n## Repository maintainer instructions\n')) {
+    throw new Error('Malformed or duplicate maintainer appendix boundary');
+  }
+  return normalized.slice(0, offset - 2);
+}

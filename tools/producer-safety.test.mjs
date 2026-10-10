@@ -133,7 +133,7 @@ test('REL-TOOL-012: isolated generation preserves 35 modules 54 clauses bytes an
   assert.match(first.stdout, /35 modules, 54 lossless contracts/);
   for (const [path, content] of Object.entries(baseline)) {
     const original = JSON.parse(content);
-    if (path === 'distribution/entry.json') original.source_snapshot.commit = commit;
+    if (path === 'distribution/entry.json') { original.source_snapshot.commit = commit; original.source_snapshot.path = 'PROTOCOL.md'; }
     if (path === 'distribution/routing.json') original.producer_binding.source_snapshot_commit = commit;
     assert.equal(readFileSync(join(root, path), 'utf8'), JSON.stringify(original) + '\n', path);
   }

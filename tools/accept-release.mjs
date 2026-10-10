@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
 import { fileURLToPath } from 'node:url';
 import { contextSession,select,readJSON } from './release-engine.mjs';
-import { subjects as subjectPaths, identify as identifyInputs, testFiles, expectedObservations } from './acceptance-inputs.mjs';
+import { subjects as subjectPaths, identify as identifyInputs, testFiles, expectedObservations, protocolSource } from './acceptance-inputs.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const hash=x=>`sha256:${createHash('sha256').update(x).digest('hex')}`;
 const text=path=>readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
@@ -35,7 +35,7 @@ if(outputMode.includes('--check-current')) {
   process.exit(0);
 }
 const evaluatedCheckout=checkout();
-const source=text('PROTOCOL.md').replace(/\r\n/g,'\n');
+const source=protocolSource(text('PROTOCOL.md'));
 const trace=json('tools/evidence/release-traceability.json');
 function subjects(){return subjectPaths(root);}
 function identify(paths){return identifyInputs(root,paths);}
@@ -74,7 +74,7 @@ const testPassed=run.status===0 && observationSummary.total===observationSummary
   new RegExp(`^# tests ${expectedObservations.length}$`,'m').test(run.stdout);
 let previous=git(['show',`${baselineCommit}:PROTOCOL.md`]);
 if(previous.status!==0) previous=git(['show',`${baselineCommit}:PROMPT.md`]);
-const priorSourceEqual=previous.status===0&&previous.stdout.replace(/\r\n/g,'\n')===source;
+const priorSourceEqual=previous.status===0&&protocolSource(previous.stdout)===source;
 // This fixed checkpoint predates the directory rename.
 const priorProof=git(['show',`${initialBaseline}:maintainer/evidence/local-validation.json`]);
 if(priorProof.status!==0)throw new Error('No attributable preceding source validation checkpoint; establish a reviewed regression basis first');
@@ -101,7 +101,7 @@ const measurements=scenarios.map(([id,facet,warm,loss])=>{
 for(const item of measurements){
   const start=performance.now();const result=item.session.load(select({classification:'known',request:[item.facet]}));
   const elapsed=performance.now()-start;
-  const baseline=readFileSync(new URL('../PROTOCOL.md',import.meta.url),'utf8').replace(/\r\n/g,'\n');
+  const baseline=protocolSource(readFileSync(new URL('../PROTOCOL.md',import.meta.url),'utf8'));
   const procedureBytes=item.facet==='full_install'||item.facet==='interrupted_setup'
     ?Buffer.byteLength(text('distribution/procedures/bootstrap.json'))+Buffer.byteLength(text('distribution/procedures/lifecycle.json'))
     :['due_update','context_loss'].includes(item.facet)?Buffer.byteLength(text('distribution/procedures/lifecycle.json')):0;
@@ -131,7 +131,7 @@ const report={
   release_ready:accepted,publication:'not_performed_for_generated_package',runtime_adoption:'not_performed',checks,identities,
   semantic_review:{result:'reasoned_complete_allocation_with_verbatim_source_preservation',reference:'tools/release-review.json',
     evidence_strength:'source reasoning plus exact reconstruction; independent reviewer and live prevention not claimed'},
-  rolling_baseline:{commit:baselineCommit,source_identity:hash(previous.stdout.replace(/\r\n/g,'\n')),
+  rolling_baseline:{commit:baselineCommit,source_identity:hash(protocolSource(previous.stdout)),
     package_checkpoint:packageBaseline?{commit:packageBaseline.recordCommit,content_identity:packageBaseline.identity}:null,
     provenance:packageBaseline?'Latest committed accepted producer-package report':'Committed local-validation.json and local-tests.tap: 30 prior reference observations and retained-source check; current push remote identity separately observed.',
     verified_scope:packageBaseline?packageBaseline.report.scope:'preceding committed canonical source retention and reference mechanisms only; not a complete previous distribution or installed integration',

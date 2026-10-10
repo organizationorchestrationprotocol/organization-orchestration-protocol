@@ -5,8 +5,9 @@ import { createHash } from 'node:crypto';
 import { entry,routing,readJSON,select,contextSession } from './release-engine.mjs';
 import { closure,evaluateGuard,operationsAccess,invalidated,reusable } from './reference-engine.mjs';
 import { validateProfile } from './schema-profile.mjs';
+import { protocolSource } from './acceptance-inputs.mjs';
 const read = path => readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
-const source=read('PROTOCOL.md').replace(/\r\n/g,'\n'), sourceLines=source.split('\n');
+const source=protocolSource(read('PROTOCOL.md')), sourceLines=source.split('\n');
 const trace=JSON.parse(read('tools/evidence/release-traceability.json'));
 const review=JSON.parse(read('tools/release-review.json'));
 const schema=JSON.parse(read('tools/schemas/contract.schema.json'));
@@ -16,6 +17,14 @@ const includes=(selected,...ids)=>ids.every(id=>selected.modules.includes(id));
 const sha=x=>`sha256:${createHash('sha256').update(x).digest('hex')}`;
 
 test('REL-PKG-001: all source spans reconstructed exactly with no omissions or overlap',()=>{
+  const marker = '<!-- OOP:MAINTAINER-APPENDIX -->';
+  const appendix = '\n\n' + marker + '\n\n## Repository maintainer instructions\nMaintainer-only instructions.';
+  assert.equal(protocolSource('normative' + appendix), 'normative');
+  assert.equal(protocolSource('changed normative' + appendix), 'changed normative');
+  assert.throws(() => protocolSource('normative' + appendix + appendix), /duplicate/);
+  assert.throws(() => protocolSource('normative\n\n## Repository maintainer instructions\n'), /missing/);
+  assert.throws(() => protocolSource('normative\n\n' + marker + '\nWrong heading'), /Malformed/);
+
   let next=1;const texts=[];
   for(const item of trace.clauses){assert.equal(item.start,next);next=item.end+1;
     const clause=readJSON(`modules/${item.module}.json`).contracts.find(x=>x.id===item.contract);
