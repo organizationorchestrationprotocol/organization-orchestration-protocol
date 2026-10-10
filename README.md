@@ -148,6 +148,8 @@ As a human, you do not need to learn the full protocol before using it. Start wi
 
 ### First-time Setup Notice
 
+At the start of each full bootstrap, the AI explains the setup actions, what `.priv` and `operations` contain, how they are organized, what you can do after setup and which missing information or provider-side actions it may need from you. During every bootstrap action it briefly explains what it is doing and why, with a small practical example when useful. It asks only for information actually missing at that step, never private credential values.
+
 The first time OOP is used with a new AI tool or environment, the AI may need to set up and verify local automatic controls. This initial setup can require more work than normal project use. When those generic capabilities remain valid, later OOP projects in the same compatible environment should reuse them instead of rebuilding them. You normally do not need to understand or configure hooks, callbacks or validators; the AI should ask only when a genuinely human-only action is required. Incomplete setup alone is not a blocker: actionable work continues automatically.
 
 For example, Project A can establish the generic controls once. Project B checks that they still work, then establishes its own isolated binding, adoption and project checks. B never inherits A's operations, private state or authority. A second workspace alone does not repeat the first-time notice.
@@ -198,7 +200,7 @@ Each project keeps separate operations, private state and identity even on the s
 
 ### Repository bootstrap
 
-The official full install requires operations readiness. For other work, when durable repository persistence or integration becomes necessary, resolve provider/instance and namespace, then discover the intended canonical repository. Distinguish `found`, `confirmed_absent`, `inaccessible` and `unknown`: failed discovery is not absence. Reuse existing operations; create private operations only when required, confirmed absent and authorized. Verify identity, private visibility, control, access and canonical local/remote binding before writes. A missing checkout never justifies another remote repository. The contract supports APIs, connectors, CLIs and equivalents without a mandatory host or transport.
+The official full install requires operations readiness. For other work, when durable repository persistence or integration becomes necessary, resolve provider/instance and namespace, then discover the intended canonical repository. Distinguish `found`, `confirmed_absent`, `inaccessible` and `unknown`: failed discovery is not absence. Reuse existing operations; request private creation settings only when creation is required, absence is confirmed and authority exists. Private visibility is not checked or used as a bootstrap readiness criterion. Verify identity, control, canonical local/remote binding and both read and write capability through the active runtime's previously selected/prepared project credentials. If manual creation or credential attachment is needed, explain the exact provider/account/repository target, safe public enrollment material or credential reference and minimal read/write permissions; recheck access after the user's action. Anonymous reading or another actor's access cannot prove this credential's readiness. A missing checkout never justifies another remote repository. The contract supports APIs, connectors, CLIs and equivalents without a mandatory host or transport.
 
 ### Repository access and credentials
 
