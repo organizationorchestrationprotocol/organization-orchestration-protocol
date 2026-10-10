@@ -323,7 +323,7 @@ A/.priv and B/.priv can each reference a secure external credential X after sepa
 
 ## Regression evidence and anti-patterns
 
-Informative illustrations of canonical section 27; traceability: EVID-1 through EVID-10 in the permanent suite.
+Informative illustrations of canonical section 27. The EVID-1 through EVID-10 labels are illustrative coverage references, not proof that ten maintained test definitions, unique observation IDs, a permanent suite, or passing results are present. Determine actual case inventories and test outcomes from verified maintained artifacts when available; no execution is claimed here.
 
 A maintainer has verified checkpoints R1, R2 and R3. A new change starts after R3: rolling regression compares against R3. R1 can additionally support cumulative coverage. Choosing R1 as primary fails even if all R1 cases pass, unless an explicit attributable justified override records both R1 and R3.
 
@@ -378,7 +378,7 @@ Maintenance navigation: [canonical prompt](PROMPT.md).
 | Positioning changes | Inspect downstream messaging, brand and commercial assets; do not close while an essential consequence remains unverified. |
 | Completion discovers an actual deployment absent from the plan | Final rerouting adds execution postconditions; success stays blocked until those checks pass. |
 
-Conversation context is an execution cache, not a source of normative authority. Static expected facets in semantic-routing-scenarios.json do not prove autonomous live language classification. Local fixture models do not prove installed interception.
+Conversation context is an execution cache, not a source of normative authority. Static expected facets in a semantic-routing scenario fixture, if one is generated, do not prove autonomous live language classification. A missing fixture provides no executable scenario evidence, and isolated local fixture models do not prove installed runtime interception.
 
 **Revision changed during reasoning.** A candidate action used authoritative policy revision R12; policy has advanced to R13. Before the effect, the guard rejects the stale expected revision and selectively refreshes dependent scope, constraints and evidence. Independent authorized work continues. Where supported, an atomic conditional action binds the effect to the expected revision, closing the race between checking and writing.
 
@@ -387,6 +387,8 @@ Conversation context is an execution cache, not a source of normative authority.
 **Ten edits, still-checked effects.** An AI revises ten descriptions under unchanged approved constraints. The runtime reuses valid governance context and evidence instead of rereading the full rules or calling another model for every edit; each protected write still passes its applicable gate. Attempted publication, a forbidden resource, changed scope or an outdated revision causes the relevant checks to be reconsidered.
 
 ## Isolation, resources and runtime suitability
+
+A workspace switch must discard Project A's effective permissions (SEC-07); independently, unavailable Project B credentials must not be replaced by unapproved personal credentials (SEC-06).
 
 | Scenario | Expected behavior |
 | --- | --- |
@@ -406,7 +408,7 @@ Conversation context is an execution cache, not a source of normative authority.
 
 A normative routing change starts in PROMPT.md. Review its actor, trigger, scope, exceptions and evidence threshold; regenerate the commit-bound Semantic Routing Index and affected split/profiles; update traceability, rolling regression, semantic scenarios, README and examples. An index contradicting canonical source is stale derived state and is invalidated; canonical source wins. The full source is reviewed for normative maintenance, while consumers use selective rehydration. No installed-runtime or provider result is inferred from synthetic tests.
 
-Maintenance procedure: [versioning.md](maintenance/versioning.md).
+Maintenance guidance: follow the canonical [protocol revision, regression and documentation requirements in PROMPT.md](PROMPT.md) (§27), together with the [README maintainer guidance](README.md#for-ai-tools-maintaining-this-repository).
 
 ## Project continuity when the AI changes
 

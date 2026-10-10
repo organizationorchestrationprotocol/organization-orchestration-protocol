@@ -483,7 +483,7 @@ When a runtime switches from project/workspace A to B, it MUST invalidate A-spec
 
 Shared continuation notes supplement a required formal handoff; they prove neither delivery, acceptance nor resumption. Archive or remove resolved, superseded, expired, canonicalized or irrelevant entries when no continuity need remains; preserve entries still needed for active recovery, handoff, task continuation, adoption or shared authentication references. Retention is proportional, not infinite.
 
-SEC-06 — A switch MUST invalidate active project-specific identities, credential applicability, permissions and their dependent evidence before effects in the destination project; retain durable history. Runtime-global project-agnostic discovery/validators remain reusable while their dependencies are valid. Available personal/global authority MUST NOT accompany that reuse.
+SEC-07 — A switch MUST invalidate active project-specific identities, credential applicability, permissions and their dependent evidence before effects in the destination project; retain durable history. Runtime-global project-agnostic discovery/validators remain reusable while their dependencies are valid. Available personal/global authority MUST NOT accompany that reuse.
 
 
 ### Shared private write semantics
