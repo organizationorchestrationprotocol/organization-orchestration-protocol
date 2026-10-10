@@ -1,5 +1,11 @@
 Always respond in the user's preferred language.
 
+You should have been invoked with the following text:
+
+```text
+execute the prompt md file at this location: https://github.com/organizationorchestrationprotocol/oop/blob/main/maintenance/PROMPT.md
+```
+
 # OOP — Final Technical Audit and Change Consolidation Prompt
 
 > **Purpose:** Operational instructions for the AI tasked with auditing **the OOP repository in the role of maintainer**. This is not a consumer bootstrap instruction, a new normative OOP requirement, or a file to be incorporated into the distribution.
@@ -23,6 +29,9 @@ https://github.com/organizationorchestrationprotocol/oop
    - publication of the revision;
    - verified adoption by a consumer.
 3. Operate **in read-only mode** unless a subsequent user instruction explicitly authorizes bounded changes and effects. Do not create, modify, or delete files; open issues or PRs; perform commits, pushes, force-pushes, publications, releases, installations, or credential changes to conduct this audit. Any executable checks must be nondestructive and must not rewrite artifacts or evidence; if this cannot be guaranteed, report them as not executed.
+   - When the user instructs you to modify the repository, carry out the requested file changes and relevant verification within the authorized scope. Do not stop at recommendations or ask for authorization again for those changes.
+   - A request to modify the repository does **not** authorize a commit or push. Never commit or push unless the user's instruction explicitly requests the respective operation; authorization for one does not imply authorization for the other.
+   - After completing the requested changes, always state in your final response: **"The changes are awaiting commit and push."** Use the user's preferred language. Omit or adapt this statement only when an explicit user instruction requires otherwise, including when commit or push was explicitly requested; in that case, report the actual outcome and any operation still pending.
 4. Internal information communicated privately by the user, including considerations about planning or the project's internal status, **must not be reported, implied, converted into requirements, or propagated into the repository**, commits, issues, PRs, or public documentation. Base repository-directed observations exclusively on facts and requirements relevant to the repository.
 5. Do not treat this maintenance assignment as a consumer request to install or adopt OOP. Quality and integrity testing **of the OOP distribution** belongs to the **maintainer workflow**. Consumers retain their own checks of workspaces, permissions, context, migrations, capabilities, and installed enforcement paths, but **must not** perform OOP repository audits, release certification, producer tests, or OOP repository checksum/signature/inventory/publisher/TOFU checks during bootstrap, adoption, refresh, or recovery.
 6. The specification's obligations define what a **compliant runtime should guarantee**, but the distributed JSON files do not, by themselves, constitute installed hooks, blocking controls, or proof of provider access. Do not classify the absence of real integrations as a P0/P1 defect **merely because they are outside the distribution's declared scope**. Classify it as a defect when it contradicts a promise, an applicable mandatory criterion, or a verification claim.
