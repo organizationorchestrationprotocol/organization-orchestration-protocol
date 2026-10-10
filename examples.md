@@ -406,6 +406,10 @@ A workspace switch must discard Project A's effective permissions (SEC-07); inde
 
 ## Maintainer routing and context examples
 
+**Structured release generation.** A maintainer reviews the entire canonical source and binds an explicit semantic allocation to its current contents. Generation preserves every clause once in 35 modules; a normal informational interaction selects entry/workspace/context/Core, while a planned durable write expands the action closure. A changed source or unreviewed allocation stops generation rather than guessing module membership from headings. Producer checks stay under maintainer tooling.
+
+**Scope-bound package acceptance.** The real package's source reconstruction, schemas, references, closure, supplied-fact guards and context reuse pass locally. This supports a prepared distribution claim only: no runtime controls were installed, no repository credential was enrolled and no cross-product handoff was observed. The receiving runtime still performs BOOT-12 installed-path probes and its own credential-based operations checks; it never runs the package acceptance suite.
+
 **AI-first acceptance.** A producer exports an access obligation with stable identity, canonical locator, actor, trigger, scoped prerequisites, verification and failure/recovery fields. A schema can establish its structure; complete semantic review still checks that exceptions and normative force survived. An entry that points to a missing dependency or an incomplete candidate is not ready even if one local fixture passes. The consumer reads the ready selected contracts; it does not run producer schema or release tests.
 
 **Efficiency without invented savings.** Compare an ordinary informational route and a write route using the same stabilized fixture catalog, measuring selected governing bytes and selector/assembly duration. Label those as isolated fixture measurements: they do not establish production token savings, model calls, monetary cost or end-to-end bootstrap time. Retain a separate rolling semantic regression basis. An extra local interpreter is adopted only when its real setup and repeated-use cost is justified.

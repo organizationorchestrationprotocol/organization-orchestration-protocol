@@ -3,7 +3,7 @@
 Let your project adopt OOP by copying this instruction into your AI tool:
 
 ```text
-Clone https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol.git into your main working folder and follow dist/README.md.
+Clone https://github.com/organizationorchestrationprotocol/organization-orchestration-protocol.git into your main working folder and follow dist/entry.json.
 ```
 
 ## What OOP is
@@ -256,7 +256,7 @@ Normative edits start in the source. Derive Core and on-demand modules from comp
 
 Canonical REL-01–REL-11 require an AI-first distribution: typed JSON contracts, a non-empty entry, compact semantic routing and dependency closure, explicit lifecycle transitions, selective context/reuse, applicable local controls and measured maintainer acceptance. Human-oriented release readability must not increase consumer cost or latency; required user explanations and organizational history remain. Performance improvements are measurements, not assumptions about serialization. Consumer bootstrap never validates the OOP repository or executes release tests.
 
-The current `dist/README.md` is a minimal canonical-bootstrap compatibility pointer. The structured reference artifacts under [maintainer](maintainer/README.md) are incomplete candidates, not an installable or verified release. Their local tests and fixture benchmark belong only to maintenance. A ready `dist/entry.json` replaces the official entry only after complete semantic coverage and applicable release acceptance; Node, CEL and MCP are not consumer-wide prerequisites.
+The structured distribution starts at `dist/entry.json`. It provides a small routing index, explicitly referenced JSON modules, complete source-qualified semantic clauses, BOOT-01–13 guards and lifecycle/interface contracts. Producer evidence under [maintainer](maintainer/README.md) records exact source coverage, local checks and measured selected-context bytes. This package does not install runtime controls or prove provider/cross-runtime integration; each consumer establishes its own scoped readiness. Node, CEL and MCP are not consumer-wide prerequisites. Earlier single-contract candidates and synthetic fixtures remain explicitly non-installable reference examples.
 
 Reuse valid freshness evidence during bounded upstream synchronization; preserve local work. Persist English content and localize interaction to the user's language. This README provides orientation; the canonical source defines the protocol.
 
