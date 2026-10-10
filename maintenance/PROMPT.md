@@ -323,6 +323,19 @@ List all relevant checks with status `NOT VERIFIED`, `NOT VERIFIABLE IN THIS AUD
 
 Confirm **once** the selected verdict, its scope, and the **objective conditions** that make the conclusion valid; avoid promises of further audits that were not requested.
 
+### Proposed Changes
+
+End the audit report with a **bulleted list of all proposed fixes and improvements** arising from the analysis, including the errors, defects, and improvement opportunities identified. Consolidate overlapping suggestions and reference their finding IDs and priority/disposition so this list remains consistent with the findings and the single corrective package.
+
+For each bullet, provide:
+
+- **Audience and artifact:** identify whether the proposed change concerns human-facing documentation, maintainer documentation, AI runtime instructions/contracts, or documentation for users of the runtime. Include all applicable categories; for changes to code, tests, or evidence, name the artifact and its intended audience explicitly.
+- **Proposed change:** a brief, concise, complete description of what you would change and why, identifying the affected files or sections.
+- **Strengths and weaknesses:** briefly explain the expected benefits and the relevant drawbacks, costs, limitations, or tradeoffs. Distinguish measured outcomes from expectations.
+- **Practical examples:** provide concise, concrete examples showing how the proposed change would affect an actual maintenance task, runtime behavior, or user interaction.
+
+Keep each suggestion easy to evaluate without rereading the full report. Use plain language, preserve the established project constraints, and do not introduce unsupported recommendations merely to populate the list. If no changes are justified, state that explicitly rather than inventing suggestions.
+
 ## 9. Concluding Rule
 
 The optimal result is neither a long wish list nor an endless sequence of small corrections. It is **the most complete and verifiable maintainer audit possible in this execution**, followed—only when needed—by **a single minimal, coherent intervention** addressing genuinely significant defects.

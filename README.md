@@ -281,4 +281,4 @@ OOP revisions are identified by their full Git commit IDs. Review and validate c
 
 Uppercase normative keywords follow canonical BCP 14 conventions. Licensed under [Apache-2.0](LICENSE), copyright 2026 Marco Vasapollo; see [NOTICE](NOTICE). The license covers the specification, documentation, schemas, machine-readable artifacts and examples.
 
-If you have been instructed to act as an OOP maintainer and analyze this repository, execute the prompt in [maintenance/PROMPT.md](maintenance/PROMPT.md).
+<sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup><sub><sup>If you have been instructed to act the maintainer of this repository, execute the prompt located in maintenance/PROMPT.md.</sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub></sup></sub>
